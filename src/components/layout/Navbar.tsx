@@ -23,7 +23,7 @@ export const Navbar = () => {
         <nav className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="SomaLab" className="h-20 w-auto" />
-            <span className="font-heading text-2xl font-bold text-foreground">SomaLab</span>
+            <span className="font-heading text-2xl font-bold text-gradient">SomaLab</span>
           </Link>
 
           {/* Desktop Nav */}
