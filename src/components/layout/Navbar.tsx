@@ -7,6 +7,7 @@ import logo from "@/assets/somalab-logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Store", path: "/store" },
   { name: "Blog", path: "/blog" },
