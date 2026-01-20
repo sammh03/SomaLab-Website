@@ -9,31 +9,47 @@ import blogBreakfast from "@/assets/blog-breakfast.jpg";
 const blogPosts = [
   {
     id: 1,
-    title: "The Science of Balanced Nutrition: What Really Works",
-    excerpt: "Discover the evidence-based principles behind sustainable healthy eating and why fad diets fail.",
+    title: "The Science of Sustainable Fat Loss: What Actually Works",
+    excerpt: "Discover why restrictive diets fail 95% of the time and learn the evidence-based principles that lead to lasting body composition changes. We break down the research on metabolism, satiety, and sustainable eating patterns.",
     image: blogNutrition,
-    date: "January 5, 2026",
-    category: "Nutrition"
+    date: "January 15, 2026",
+    category: "Nutrition Science"
   },
   {
     id: 2,
-    title: "Morning Rituals That Transform Your Day",
-    excerpt: "Learn how simple morning habits can boost your energy, focus, and overall wellbeing.",
+    title: "5 Morning Habits That Actually Boost Your Energy",
+    excerpt: "Skip the coffee-dependent morning routine. Learn about the science-backed morning practices that optimise your circadian rhythm, blood sugar regulation, and mental clarity for all-day energy.",
     image: blogWellness,
-    date: "January 2, 2026",
+    date: "January 10, 2026",
     category: "Wellness"
   },
   {
     id: 3,
-    title: "Power Breakfast Ideas for Busy Professionals",
-    excerpt: "Quick, nutritious breakfast recipes that fuel your body and fit your schedule.",
+    title: "High-Protein Breakfast Ideas for Busy Australians",
+    excerpt: "Struggling to get enough protein at breakfast? These quick, delicious recipes can be prepped ahead and provide the amino acids you need to fuel your morning—no cooking required on busy weekdays.",
     image: blogBreakfast,
-    date: "December 28, 2025",
+    date: "January 5, 2026",
     category: "Recipes"
+  },
+  {
+    id: 4,
+    title: "Gut Health 101: What Your Digestion Is Telling You",
+    excerpt: "Bloating, fatigue, and brain fog could all be linked to your gut. Understand the connection between your microbiome and overall health, plus practical steps to improve your digestive function.",
+    image: blogNutrition,
+    date: "December 28, 2025",
+    category: "Gut Health"
+  },
+  {
+    id: 5,
+    title: "Nutrition for Performance: Fueling Your Training",
+    excerpt: "Whether you're a weekend warrior or serious athlete, what you eat impacts how you perform. Learn the fundamentals of sports nutrition including timing, macros, and recovery nutrition.",
+    image: blogWellness,
+    date: "December 20, 2025",
+    category: "Sports Nutrition"
   }
 ];
 
-const categories = ["All", "Nutrition", "Wellness", "Recipes", "Mindset"];
+const categories = ["All", "Nutrition Science", "Wellness", "Recipes", "Gut Health", "Sports Nutrition"];
 
 const Blog = () => {
   return (
@@ -50,11 +66,15 @@ const Blog = () => {
               SomaLab Blog
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Insights for Your Wellness Journey
+              Evidence-Based Health Insights
             </h1>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Expert tips, evidence-based insights, and practical advice to help you 
-              live your healthiest life.
+            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
+              Cutting through the noise with science-backed nutrition advice, practical wellness tips, 
+              and delicious recipes to support your health journey.
+            </p>
+            <p className="font-body text-muted-foreground max-w-xl mx-auto">
+              All content is written by qualified nutrition professionals and referenced to current research. 
+              No fads, no quick fixes—just trustworthy information you can use.
             </p>
           </motion.div>
         </div>
@@ -150,7 +170,7 @@ const Blog = () => {
                     <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
                       {post.title}
                     </h3>
-                    <p className="font-body text-sm text-muted-foreground flex-1">
+                    <p className="font-body text-sm text-muted-foreground flex-1 leading-relaxed">
                       {post.excerpt}
                     </p>
                     <Button variant="link" className="p-0 mt-4 w-fit text-accent">
@@ -171,11 +191,11 @@ const Blog = () => {
             viewport={{ once: true }}
           >
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
-              Get Weekly Wellness Tips
+              Get Weekly Evidence-Based Health Tips
             </h2>
             <p className="font-body text-primary-foreground/80 mb-6 max-w-xl mx-auto">
-              Subscribe to our newsletter for the latest nutrition insights, 
-              recipes, and exclusive content.
+              Subscribe to our newsletter for the latest nutrition research, practical recipes, 
+              and exclusive content delivered to your inbox every week. No spam, just science.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
@@ -187,6 +207,9 @@ const Blog = () => {
                 Subscribe
               </Button>
             </div>
+            <p className="text-primary-foreground/60 text-xs mt-4">
+              By subscribing, you agree to receive email updates from SomaLab. Unsubscribe anytime.
+            </p>
           </motion.div>
         </div>
       </section>

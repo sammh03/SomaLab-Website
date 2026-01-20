@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Heart, Users, Star } from "lucide-react";
+import { ArrowRight, Leaf, Heart, Users, Star, FlaskConical, Clock, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 import coachPortrait from "@/assets/coach-portrait.jpg";
@@ -9,26 +9,53 @@ const reviews = [
   {
     name: "Sarah M.",
     rating: 5,
-    text: "SomaLab completely transformed my relationship with food. The personalized approach made all the difference!",
+    text: "After years of yo-yo dieting, SomaLab helped me understand my body and build sustainable habits. I've lost 12kg and kept it off for over a year now!",
     date: "2 weeks ago"
   },
   {
     name: "Michael R.",
     rating: 5,
-    text: "Best investment I've made in my health. Lost 30 lbs and gained so much energy. Highly recommend!",
+    text: "The science-based approach really sets SomaLab apart. As someone who was sceptical of 'wellness coaches', the evidence-backed methods won me over completely.",
     date: "1 month ago"
   },
   {
     name: "Jennifer L.",
     rating: 5,
-    text: "The coaching sessions are incredibly supportive. I finally feel in control of my nutrition.",
+    text: "Finally found a nutrition consultant who listens and adapts to my lifestyle. No rigid meal plans—just practical strategies that work for busy mums like me.",
     date: "3 weeks ago"
   },
   {
     name: "David K.",
     rating: 5,
-    text: "Professional, knowledgeable, and genuinely caring. My whole family has benefited from working with SomaLab.",
+    text: "My energy levels and athletic performance have improved dramatically. The personalised approach to sports nutrition was exactly what I needed.",
     date: "1 month ago"
+  }
+];
+
+const howItWorks = [
+  {
+    step: "01",
+    icon: Clock,
+    title: "Book Your Free Consultation",
+    description: "Schedule a complimentary 30-minute discovery call to discuss your health goals and see if we're the right fit for you."
+  },
+  {
+    step: "02",
+    icon: FlaskConical,
+    title: "Comprehensive Assessment",
+    description: "We analyse your lifestyle, dietary habits, health history, and goals to create a complete picture of your nutritional needs."
+  },
+  {
+    step: "03",
+    icon: Target,
+    title: "Personalised Plan Creation",
+    description: "Receive a tailored nutrition strategy designed specifically for your body, preferences, and lifestyle—no cookie-cutter approaches."
+  },
+  {
+    step: "04",
+    icon: Heart,
+    title: "Ongoing Support & Results",
+    description: "Regular check-ins, plan adjustments, and accountability coaching ensure you achieve sustainable, long-term transformation."
   }
 ];
 
@@ -46,7 +73,7 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt="Fresh healthy foods"
+            alt="Fresh healthy foods and nutritious ingredients"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
@@ -60,34 +87,35 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-accent/10 text-accent rounded-full">
-              Nutrition & Wellness Coaching
+              Evidence-Based Nutrition Consulting
             </span>
             <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              Transform Your
-              <span className="text-gradient"> Health</span>,
+              Achieve Lasting
+              <span className="text-gradient"> Health</span>
               <br />
-              Transform Your Life
+              With Science, Not Fads
             </h1>
             <p className="font-body text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Personalized nutrition plans and expert coaching to help you achieve 
-              sustainable wellness. Start your journey to a healthier, more vibrant you.
+              SomaLab helps health-conscious Australians achieve sustainable fat loss, 
+              peak performance, and total wellbeing through personalised, evidence-based 
+              nutrition coaching. No restrictive diets. No quick fixes. Just real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-base">
                 <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-                  Book a Consultation
+                  Book a Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-base">
-                <Link to="/services">View Services</Link>
+                <Link to="/services">View Our Services</Link>
               </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Why Choose SomaLab Section */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4">
           <motion.div
@@ -101,26 +129,31 @@ const Index = () => {
               Why Choose SomaLab?
             </h2>
             <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-              Our holistic approach combines science-backed nutrition with personalized coaching.
+              We combine scientific rigour with personalised care to deliver nutrition strategies that actually work for your unique body and lifestyle.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
+                icon: FlaskConical,
+                title: "Evidence-Based Methods",
+                description: "Every recommendation is grounded in peer-reviewed research and clinical best practices—no fads or pseudoscience."
+              },
+              {
                 icon: Leaf,
-                title: "Personalized Plans",
-                description: "Custom nutrition strategies tailored to your unique body, lifestyle, and goals."
+                title: "Personalised Strategies",
+                description: "Your plan is tailored to your body, goals, food preferences, and lifestyle. No one-size-fits-all approaches here."
               },
               {
                 icon: Heart,
-                title: "Holistic Approach",
-                description: "We address nutrition, mindset, and habits for lasting transformation."
+                title: "Holistic Wellbeing Focus",
+                description: "We address nutrition alongside sleep, stress, and movement because true health requires a whole-body approach."
               },
               {
                 icon: Users,
-                title: "Ongoing Support",
-                description: "Regular check-ins and adjustments to keep you on track and motivated."
+                title: "Genuine Support & Accountability",
+                description: "Regular check-ins, responsive communication, and genuine care to keep you motivated and on track."
               }
             ].map((feature, index) => (
               <motion.div
@@ -146,8 +179,59 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* How It Works Section */}
       <section className="section-padding">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-primary/10 text-primary rounded-full">
+              Your Journey
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              How It Works
+            </h2>
+            <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+              Getting started is simple. Here's what to expect when you partner with SomaLab.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {howItWorks.map((item, index) => (
+              <motion.div
+                key={item.step}
+                className="relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+              >
+                <span className="font-heading text-6xl font-bold text-accent/20 absolute -top-4 left-0">
+                  {item.step}
+                </span>
+                <div className="pt-12 pl-2">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <item.icon className="h-6 w-6 text-accent" />
+                  </div>
+                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -158,7 +242,7 @@ const Index = () => {
             >
               <img
                 src={coachPortrait}
-                alt="Your Health Coach"
+                alt="SomaLab Founder - Nutrition Consultant and Health Coach"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-xl"
               />
             </motion.div>
@@ -173,21 +257,22 @@ const Index = () => {
                 Meet Your Coach
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Passionate About Your Wellness Journey
+                Science Meets Compassion
               </h2>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
-                With years of experience in nutrition science and health coaching, 
-                I've helped hundreds of clients transform their relationship with food 
-                and achieve their health goals. My approach is rooted in understanding 
-                that true wellness comes from sustainable, enjoyable lifestyle changes.
+                With a background in medical laboratory science and advanced qualifications 
+                in nutrition consulting, I founded SomaLab to bridge the gap between clinical 
+                evidence and practical, everyday wellness. I've helped hundreds of Australians 
+                transform their relationship with food and achieve lasting results.
               </p>
               <p className="font-body text-muted-foreground mb-8 leading-relaxed">
-                Whether you're looking to lose weight, boost energy, manage a health 
-                condition, or simply feel your best, I'm here to guide you every step of the way.
+                Whether you're looking to optimise body composition, boost your energy, 
+                improve athletic performance, or simply feel your best, I'm here to guide 
+                you with evidence-based strategies tailored to your unique needs.
               </p>
               <Button asChild>
-                <Link to="/services">
-                  Learn More About My Services
+                <Link to="/about">
+                  Learn More About Me
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -197,7 +282,7 @@ const Index = () => {
       </section>
 
       {/* Google Reviews Section */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-12"
@@ -284,10 +369,12 @@ const Index = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-              Ready to Start Your Transformation?
+              Ready to Transform Your Health?
             </h2>
             <p className="font-body text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-              Book your free discovery call today and let's create a personalized plan for your health goals.
+              Take the first step towards sustainable health and wellbeing. Book your free 
+              30-minute consultation today and discover how personalised nutrition coaching 
+              can help you achieve your goals.
             </p>
             <Button
               asChild
@@ -296,7 +383,7 @@ const Index = () => {
               className="text-base"
             >
               <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-                Schedule Your Free Call
+                Book Your Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
