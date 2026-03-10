@@ -132,12 +132,36 @@ function somalab_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'footer_tagline', array(
-		'default'           => 'Evidence-based nutrition consulting for health-conscious Australians. Achieve sustainable results with science, not fads.',
+		'default'           => 'SomaLab provides evidence-based nutrition consulting to help health-conscious Australians achieve sustainable fat loss, peak performance, and genuine wellbeing.',
 		'sanitize_callback' => 'sanitize_textarea_field',
 	) );
 	$wp_customize->add_control( 'footer_tagline', array( 'label' => __( 'Footer Tagline', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'textarea' ) );
 
 	$wp_customize->add_setting( 'google_reviews_url', array( 'default' => 'https://www.google.com/maps', 'sanitize_callback' => 'esc_url_raw' ) );
 	$wp_customize->add_control( 'google_reviews_url', array( 'label' => __( 'Google Reviews URL', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'url' ) );
+
+	// Contact info
+	$wp_customize->add_setting( 'contact_email', array( 'default' => 'hello@somalab.com.au', 'sanitize_callback' => 'sanitize_email' ) );
+	$wp_customize->add_control( 'contact_email', array( 'label' => __( 'Contact Email', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'email' ) );
+
+	$wp_customize->add_setting( 'contact_phone', array( 'default' => '+61400000000', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_control( 'contact_phone', array( 'label' => __( 'Phone (tel: format)', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'text' ) );
+
+	$wp_customize->add_setting( 'contact_phone_display', array( 'default' => '+61 400 000 000', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_control( 'contact_phone_display', array( 'label' => __( 'Phone (display)', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'text' ) );
+
+	$wp_customize->add_setting( 'contact_location', array( 'default' => 'Brisbane, Queensland, Australia', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_control( 'contact_location', array( 'label' => __( 'Location', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'text' ) );
+
+	// Social URLs
+	$wp_customize->add_setting( 'social_instagram', array( 'default' => 'https://instagram.com/somalab', 'sanitize_callback' => 'esc_url_raw' ) );
+	$wp_customize->add_control( 'social_instagram', array( 'label' => __( 'Instagram URL', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'url' ) );
+
+	$wp_customize->add_setting( 'social_facebook', array( 'default' => 'https://facebook.com/somalab', 'sanitize_callback' => 'esc_url_raw' ) );
+	$wp_customize->add_control( 'social_facebook', array( 'label' => __( 'Facebook URL', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'url' ) );
+
+	// ABN
+	$wp_customize->add_setting( 'footer_abn', array( 'default' => 'ABN: 00 000 000 000', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_control( 'footer_abn', array( 'label' => __( 'ABN', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'text' ) );
 }
 add_action( 'customize_register', 'somalab_customize_register' );

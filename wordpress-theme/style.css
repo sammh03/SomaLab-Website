@@ -693,15 +693,18 @@ img {
 
 /* ===== Footer ===== */
 .site-footer {
-  background-color: var(--fg);
-  color: hsla(40, 33%, 98%, 0.7);
-  padding: 4rem 0 2rem;
+  background-color: var(--primary);
+  color: hsla(40, 33%, 98%, 1);
+}
+
+.footer-main {
+  padding: 4rem 0;
 }
 
 .footer-grid {
   display: grid;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 3rem;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -710,23 +713,23 @@ img {
   }
 }
 
-.footer-brand span {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-fg);
+.footer-logo {
+  height: 4rem;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 0.5rem;
 }
 
 .footer-brand p {
   margin-top: 0.75rem;
   font-size: 0.875rem;
   line-height: 1.6;
+  opacity: 0.8;
 }
 
 .footer-col h4 {
   font-family: var(--font-heading);
-  color: var(--primary-fg);
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -741,22 +744,125 @@ img {
 
 .footer-col a {
   font-size: 0.875rem;
-  transition: color 0.2s;
+  opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
 .footer-col a:hover {
-  color: var(--accent);
+  opacity: 1;
 }
 
-.footer-bottom {
-  border-top: 1px solid hsla(40, 33%, 98%, 0.15);
-  padding-top: 2rem;
-  text-align: center;
+/* Footer contact with icons */
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contact svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.footer-contact span {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: hsla(40, 33%, 98%, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.social-icon:hover {
+  background-color: hsla(40, 33%, 98%, 0.2);
+}
+
+.social-icon svg {
+  stroke: hsla(40, 33%, 98%, 1);
+}
+
+.btn-accent {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--accent-fg);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-accent:hover {
+  background-color: hsl(25, 90%, 48%);
+}
+
+/* Disclaimer */
+.footer-disclaimer {
+  border-top: 1px solid hsla(40, 33%, 98%, 0.2);
+  padding: 2rem 0;
+}
+
+.footer-disclaimer p {
   font-size: 0.75rem;
+  opacity: 0.6;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto 1rem;
 }
 
-.footer-bottom p {
-  margin-bottom: 0.25rem;
+.footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.footer-legal a {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.footer-legal a:hover {
+  opacity: 0.8;
+}
+
+.legal-sep {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .legal-sep {
+    display: inline;
+  }
+}
+
+/* Copyright */
+.footer-copyright {
+  border-top: 1px solid hsla(40, 33%, 98%, 0.1);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-copyright p {
+  font-size: 0.75rem;
+  opacity: 0.5;
 }
 
 /* ===== Scroll Animations ===== */
