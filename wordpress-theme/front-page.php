@@ -8,16 +8,14 @@
 get_header();
 
 $booking_url = get_theme_mod( 'booking_url', 'https://calendly.com' );
-$hero_image  = get_theme_mod( 'hero_image', '' );
-$coach_image = get_theme_mod( 'coach_image', '' );
+$hero_image  = get_theme_mod( 'hero_image', get_template_directory_uri() . '/assets/images/hero-image.jpg' );
+$coach_image = get_theme_mod( 'coach_image', get_template_directory_uri() . '/assets/images/coach-portrait.jpg' );
 ?>
 
 <!-- Hero Section -->
 <section class="hero section-padding" id="hero" style="padding-top: 8rem;">
 	<div class="hero-bg">
-		<?php if ( $hero_image ) : ?>
-			<img src="<?php echo esc_url( $hero_image ); ?>" alt="Fresh healthy foods and nutritious ingredients">
-		<?php endif; ?>
+		<img src="<?php echo esc_url( $hero_image ); ?>" alt="Fresh healthy foods and nutritious ingredients">
 		<div class="hero-overlay"></div>
 	</div>
 
@@ -37,7 +35,7 @@ $coach_image = get_theme_mod( 'coach_image', '' );
 					Book a Free Consultation
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 				</a>
-				<a href="#how" class="btn btn-outline btn-lg">View Our Services</a>
+				<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn-outline btn-lg">View Our Services</a>
 			</div>
 		</div>
 	</div>
@@ -149,9 +147,7 @@ $coach_image = get_theme_mod( 'coach_image', '' );
 	<div class="container">
 		<div class="about-grid">
 			<div class="about-image fade-left">
-				<?php if ( $coach_image ) : ?>
-					<img src="<?php echo esc_url( $coach_image ); ?>" alt="SomaLab Founder — Nutrition Consultant and Health Coach">
-				<?php endif; ?>
+				<img src="<?php echo esc_url( $coach_image ); ?>" alt="SomaLab Founder — Nutrition Consultant and Health Coach">
 			</div>
 
 			<div class="about-text fade-right">
@@ -159,7 +155,7 @@ $coach_image = get_theme_mod( 'coach_image', '' );
 				<h2 style="margin-top: 1rem;"><?php echo esc_html( get_theme_mod( 'coach_heading', 'Science Meets Compassion' ) ); ?></h2>
 				<p><?php echo esc_html( get_theme_mod( 'coach_bio_1', 'With a background in medical laboratory science and advanced qualifications in nutrition consulting, I founded SomaLab to bridge the gap between clinical evidence and practical, everyday wellness. I\'ve helped hundreds of Australians transform their relationship with food and achieve lasting results.' ) ); ?></p>
 				<p><?php echo esc_html( get_theme_mod( 'coach_bio_2', 'Whether you\'re looking to optimise body composition, boost your energy, improve athletic performance, or simply feel your best, I\'m here to guide you with evidence-based strategies tailored to your unique needs.' ) ); ?></p>
-				<a href="#how" class="btn btn-primary">
+				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="btn btn-primary">
 					Learn More About Me
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 				</a>
@@ -241,7 +237,7 @@ $coach_image = get_theme_mod( 'coach_image', '' );
 <!-- CTA Section -->
 <section class="cta-section section-padding">
 	<div class="container">
-		<div class="fade-up">
+		<div class="fade-up" style="text-align: center;">
 			<h2><?php echo esc_html( get_theme_mod( 'cta_heading', 'Ready to Transform Your Health?' ) ); ?></h2>
 			<p><?php echo esc_html( get_theme_mod( 'cta_text', 'Take the first step towards sustainable health and wellbeing. Book your free 30-minute consultation today and discover how personalised nutrition coaching can help you achieve your goals.' ) ); ?></p>
 			<a href="<?php echo esc_url( $booking_url ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">

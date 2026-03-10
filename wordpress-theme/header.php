@@ -9,28 +9,43 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php $booking_url = get_theme_mod( 'booking_url', 'https://calendly.com' ); ?>
+<?php
+$booking_url = get_theme_mod( 'booking_url', 'https://calendly.com' );
+$logo_url    = '';
+if ( has_custom_logo() ) {
+	$logo_id  = get_theme_mod( 'custom_logo' );
+	$logo_url = wp_get_attachment_image_url( $logo_id, 'full' );
+} else {
+	$logo_url = get_template_directory_uri() . '/assets/images/somalab-logo.png';
+}
+?>
 
 <header class="navbar" id="navbar">
 	<div class="container">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand">
-			<?php if ( has_custom_logo() ) : ?>
-				<?php
-				$logo_id  = get_theme_mod( 'custom_logo' );
-				$logo_url = wp_get_attachment_image_url( $logo_id, 'full' );
-				?>
-				<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?>">
-			<?php endif; ?>
+			<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?>">
 			<span class="text-gradient"><?php bloginfo( 'name' ); ?></span>
 		</a>
 
-		<ul class="navbar-links">
-			<li><a href="#hero">Home</a></li>
-			<li><a href="#why">Why SomaLab</a></li>
-			<li><a href="#how">How It Works</a></li>
-			<li><a href="#coach">About</a></li>
-			<li><a href="#reviews">Reviews</a></li>
-		</ul>
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'container'      => false,
+				'menu_class'     => 'navbar-links',
+				'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+				'depth'          => 1,
+			) );
+			?>
+		<?php else : ?>
+			<ul class="navbar-links">
+				<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Services</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/store/' ) ); ?>">Store</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a></li>
+			</ul>
+		<?php endif; ?>
 
 		<div class="navbar-cta">
 			<a href="<?php echo esc_url( $booking_url ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Now</a>
@@ -44,13 +59,26 @@
 	</div>
 
 	<div class="container">
-		<ul class="mobile-menu" id="mobileMenu">
-			<li><a href="#hero">Home</a></li>
-			<li><a href="#why">Why SomaLab</a></li>
-			<li><a href="#how">How It Works</a></li>
-			<li><a href="#coach">About</a></li>
-			<li><a href="#reviews">Reviews</a></li>
-			<li><a href="<?php echo esc_url( $booking_url ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Now</a></li>
-		</ul>
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'container'      => false,
+				'menu_class'     => 'mobile-menu',
+				'menu_id'        => 'mobileMenu',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth'          => 1,
+			) );
+			?>
+		<?php else : ?>
+			<ul class="mobile-menu" id="mobileMenu">
+				<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Services</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/store/' ) ); ?>">Store</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a></li>
+				<li><a href="<?php echo esc_url( $booking_url ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Now</a></li>
+			</ul>
+		<?php endif; ?>
 	</div>
 </header>
