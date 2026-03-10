@@ -52,6 +52,34 @@ function somalab_scripts() {
 add_action( 'wp_enqueue_scripts', 'somalab_scripts' );
 
 /**
+ * Auto-create pages on theme activation
+ */
+function somalab_create_pages() {
+	$pages = array(
+		'about'    => array( 'title' => 'About',    'template' => 'page-about.php' ),
+		'services' => array( 'title' => 'Services', 'template' => 'page-services.php' ),
+		'store'    => array( 'title' => 'Store',    'template' => 'page-store.php' ),
+		'blog'     => array( 'title' => 'Blog',     'template' => 'page-blog.php' ),
+	);
+
+	foreach ( $pages as $slug => $page_data ) {
+		$existing = get_page_by_path( $slug );
+		if ( ! $existing ) {
+			$page_id = wp_insert_post( array(
+				'post_title'  => $page_data['title'],
+				'post_name'   => $slug,
+				'post_status' => 'publish',
+				'post_type'   => 'page',
+			) );
+			if ( $page_id && ! is_wp_error( $page_id ) ) {
+				update_post_meta( $page_id, '_wp_page_template', $page_data['template'] );
+			}
+		}
+	}
+}
+add_action( 'after_switch_theme', 'somalab_create_pages' );
+
+/**
  * Customizer settings
  */
 function somalab_customize_register( $wp_customize ) {
