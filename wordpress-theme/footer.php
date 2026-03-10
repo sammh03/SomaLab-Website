@@ -1,44 +1,92 @@
 <footer class="site-footer">
-	<div class="container">
-		<div class="footer-grid">
-			<div class="footer-brand">
-				<span class="text-gradient">SomaLab</span>
-				<p><?php echo esc_html( get_theme_mod( 'footer_tagline', 'Evidence-based nutrition consulting for health-conscious Australians. Achieve sustainable results with science, not fads.' ) ); ?></p>
-			</div>
+	<!-- Main Footer -->
+	<div class="footer-main">
+		<div class="container">
+			<div class="footer-grid">
+				<!-- Brand Column -->
+				<div class="footer-brand">
+					<?php if ( has_custom_logo() ) :
+						$logo_id  = get_theme_mod( 'custom_logo' );
+						$logo_url = wp_get_attachment_image_url( $logo_id, 'full' );
+					?>
+						<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo">
+					<?php endif; ?>
+					<p><?php echo esc_html( get_theme_mod( 'footer_tagline', 'SomaLab provides evidence-based nutrition consulting to help health-conscious Australians achieve sustainable fat loss, peak performance, and genuine wellbeing.' ) ); ?></p>
+				</div>
 
-			<div class="footer-col">
-				<h4>Navigation</h4>
-				<ul>
-					<li><a href="#hero">Home</a></li>
-					<li><a href="#why">Why SomaLab</a></li>
-					<li><a href="#how">How It Works</a></li>
-					<li><a href="#coach">About</a></li>
-					<li><a href="#reviews">Reviews</a></li>
-				</ul>
-			</div>
+				<!-- Quick Links -->
+				<div class="footer-col">
+					<h4>Quick Links</h4>
+					<ul>
+						<li><a href="#coach">About Us</a></li>
+						<li><a href="#how">Services &amp; Pricing</a></li>
+						<li><a href="#reviews">Reviews</a></li>
+					</ul>
+				</div>
 
-			<div class="footer-col">
-				<h4>Services</h4>
-				<ul>
-					<li><a href="#how">Initial Consultation</a></li>
-					<li><a href="#how">Follow-Up Sessions</a></li>
-					<li><a href="#how">12-Week Program</a></li>
-					<li><a href="#how">Sports Nutrition</a></li>
-				</ul>
-			</div>
+				<!-- Contact -->
+				<div class="footer-col">
+					<h4>Contact</h4>
+					<ul class="footer-contact">
+						<li>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+							<a href="mailto:<?php echo esc_attr( get_theme_mod( 'contact_email', 'hello@somalab.com.au' ) ); ?>"><?php echo esc_html( get_theme_mod( 'contact_email', 'hello@somalab.com.au' ) ); ?></a>
+						</li>
+						<li>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+							<a href="tel:<?php echo esc_attr( get_theme_mod( 'contact_phone', '+61400000000' ) ); ?>"><?php echo esc_html( get_theme_mod( 'contact_phone_display', '+61 400 000 000' ) ); ?></a>
+						</li>
+						<li>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+							<span><?php echo esc_html( get_theme_mod( 'contact_location', 'Brisbane, Queensland, Australia' ) ); ?></span>
+						</li>
+					</ul>
+				</div>
 
-			<div class="footer-col">
-				<h4>Connect</h4>
-				<ul>
-					<li><a href="<?php echo esc_url( get_theme_mod( 'booking_url', 'https://calendly.com' ) ); ?>" target="_blank" rel="noopener noreferrer">Book a Consultation</a></li>
-					<li><a href="<?php echo esc_url( get_theme_mod( 'google_reviews_url', 'https://www.google.com/maps' ) ); ?>" target="_blank" rel="noopener noreferrer">Google Reviews</a></li>
-				</ul>
+				<!-- Connect -->
+				<div class="footer-col">
+					<h4>Connect</h4>
+					<div class="footer-social">
+						<?php $instagram_url = get_theme_mod( 'social_instagram', 'https://instagram.com/somalab' ); ?>
+						<?php if ( $instagram_url ) : ?>
+							<a href="<?php echo esc_url( $instagram_url ); ?>" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Follow SomaLab on Instagram">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+							</a>
+						<?php endif; ?>
+
+						<?php $facebook_url = get_theme_mod( 'social_facebook', 'https://facebook.com/somalab' ); ?>
+						<?php if ( $facebook_url ) : ?>
+							<a href="<?php echo esc_url( $facebook_url ); ?>" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Follow SomaLab on Facebook">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+							</a>
+						<?php endif; ?>
+					</div>
+					<a href="<?php echo esc_url( get_theme_mod( 'booking_url', 'https://calendly.com' ) ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+						Book a Consultation
+					</a>
+				</div>
 			</div>
 		</div>
+	</div>
 
-		<div class="footer-bottom">
+	<!-- Disclaimer -->
+	<div class="footer-disclaimer">
+		<div class="container">
+			<p><strong>Disclaimer:</strong> The information provided by SomaLab is for general educational and informational purposes only. It is not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Nutrition consulting services provided by SomaLab are intended to complement, not replace, medical care. Individual results may vary.</p>
+			<div class="footer-legal">
+				<a href="<?php echo esc_url( home_url( '/privacy-policy' ) ); ?>">Privacy Policy</a>
+				<span class="legal-sep">&bull;</span>
+				<a href="<?php echo esc_url( home_url( '/terms' ) ); ?>">Terms &amp; Conditions</a>
+				<span class="legal-sep">&bull;</span>
+				<span><?php echo esc_html( get_theme_mod( 'footer_abn', 'ABN: 00 000 000 000' ) ); ?></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Copyright -->
+	<div class="footer-copyright">
+		<div class="container">
 			<p>&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
-			<p>SomaLab provides general nutrition and wellness information. Always consult a qualified healthcare professional before making changes to your diet or health regimen.</p>
 		</div>
 	</div>
 </footer>
