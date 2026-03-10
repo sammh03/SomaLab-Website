@@ -5,12 +5,16 @@
 			<div class="footer-grid">
 				<!-- Brand Column -->
 				<div class="footer-brand">
-					<?php if ( has_custom_logo() ) :
-						$logo_id  = get_theme_mod( 'custom_logo' );
-						$logo_url = wp_get_attachment_image_url( $logo_id, 'full' );
+					<?php
+					$footer_logo = '';
+					if ( has_custom_logo() ) {
+						$logo_id    = get_theme_mod( 'custom_logo' );
+						$footer_logo = wp_get_attachment_image_url( $logo_id, 'full' );
+					} else {
+						$footer_logo = get_template_directory_uri() . '/assets/images/somalab-logo.png';
+					}
 					?>
-						<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo">
-					<?php endif; ?>
+					<img src="<?php echo esc_url( $footer_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo">
 					<p><?php echo esc_html( get_theme_mod( 'footer_tagline', 'SomaLab provides evidence-based nutrition consulting to help health-conscious Australians achieve sustainable fat loss, peak performance, and genuine wellbeing.' ) ); ?></p>
 				</div>
 
@@ -18,9 +22,10 @@
 				<div class="footer-col">
 					<h4>Quick Links</h4>
 					<ul>
-						<li><a href="#coach">About Us</a></li>
-						<li><a href="#how">Services &amp; Pricing</a></li>
-						<li><a href="#reviews">Reviews</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About Us</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Services &amp; Pricing</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Health Blog</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/store/' ) ); ?>">Store</a></li>
 					</ul>
 				</div>
 
@@ -74,9 +79,9 @@
 		<div class="container">
 			<p><strong>Disclaimer:</strong> The information provided by SomaLab is for general educational and informational purposes only. It is not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Nutrition consulting services provided by SomaLab are intended to complement, not replace, medical care. Individual results may vary.</p>
 			<div class="footer-legal">
-				<a href="<?php echo esc_url( home_url( '/privacy-policy' ) ); ?>">Privacy Policy</a>
+				<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a>
 				<span class="legal-sep">&bull;</span>
-				<a href="<?php echo esc_url( home_url( '/terms' ) ); ?>">Terms &amp; Conditions</a>
+				<a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>">Terms &amp; Conditions</a>
 				<span class="legal-sep">&bull;</span>
 				<span><?php echo esc_html( get_theme_mod( 'footer_abn', 'ABN: 00 000 000 000' ) ); ?></span>
 			</div>
