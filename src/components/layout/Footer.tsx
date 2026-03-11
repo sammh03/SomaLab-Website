@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone, Facebook } from "lucide-react";
+import { Instagram, Mail, Phone, Facebook, MapPin } from "lucide-react";
 import logo from "@/assets/somalab-logo.png";
 
 export const Footer = () => {
