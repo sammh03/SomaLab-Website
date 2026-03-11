@@ -49,9 +49,10 @@ export const Footer = () => {
                   <Phone className="h-4 w-4" />
                   +61 400 000 000
                 </a>
-                <p className="font-body text-sm opacity-80">
+                <span className="font-body text-sm opacity-80 flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
                   Brisbane, Queensland, Australia
-                </p>
+                </span>
               </div>
             </div>
 

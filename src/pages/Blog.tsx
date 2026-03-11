@@ -1,61 +1,16 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import blogNutrition from "@/assets/blog-nutrition.jpg";
 import blogWellness from "@/assets/blog-wellness.jpg";
 import blogBreakfast from "@/assets/blog-breakfast.jpg";
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "The Science of Sustainable Fat Loss: What Actually Works",
-    excerpt: "Discover why restrictive diets fail 95% of the time and learn the evidence-based principles that lead to lasting body composition changes. We break down the research on metabolism, satiety, and sustainable eating patterns.",
-    image: blogNutrition,
-    date: "January 15, 2026",
-    category: "Nutrition Science"
-  },
-  {
-    id: 2,
-    title: "5 Morning Habits That Actually Boost Your Energy",
-    excerpt: "Skip the coffee-dependent morning routine. Learn about the science-backed morning practices that optimise your circadian rhythm, blood sugar regulation, and mental clarity for all-day energy.",
-    image: blogWellness,
-    date: "January 10, 2026",
-    category: "Wellness"
-  },
-  {
-    id: 3,
-    title: "High-Protein Breakfast Ideas for Busy Australians",
-    excerpt: "Struggling to get enough protein at breakfast? These quick, delicious recipes can be prepped ahead and provide the amino acids you need to fuel your morning—no cooking required on busy weekdays.",
-    image: blogBreakfast,
-    date: "January 5, 2026",
-    category: "Recipes"
-  },
-  {
-    id: 4,
-    title: "Gut Health 101: What Your Digestion Is Telling You",
-    excerpt: "Bloating, fatigue, and brain fog could all be linked to your gut. Understand the connection between your microbiome and overall health, plus practical steps to improve your digestive function.",
-    image: blogNutrition,
-    date: "December 28, 2025",
-    category: "Gut Health"
-  },
-  {
-    id: 5,
-    title: "Nutrition for Performance: Fueling Your Training",
-    excerpt: "Whether you're a weekend warrior or serious athlete, what you eat impacts how you perform. Learn the fundamentals of sports nutrition including timing, macros, and recovery nutrition.",
-    image: blogWellness,
-    date: "December 20, 2025",
-    category: "Sports Nutrition"
-  }
-];
-
-const categories = ["All", "Nutrition Science", "Wellness", "Recipes", "Gut Health", "Sports Nutrition"];
-
 const Blog = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-secondary pt-32">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -72,28 +27,11 @@ const Blog = () => {
               Cutting through the noise with science-backed nutrition advice, practical wellness tips, 
               and delicious recipes to support your health journey.
             </p>
-            <p className="font-body text-muted-foreground max-w-xl mx-auto">
+            <p className="font-body text-sm text-muted-foreground max-w-xl mx-auto">
               All content is written by qualified nutrition professionals and referenced to current research. 
               No fads, no quick fixes—just trustworthy information you can use.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="py-8 border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-2">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={category === "All" ? "default" : "outline"}
-                size="sm"
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -112,26 +50,27 @@ const Blog = () => {
               <div className="grid md:grid-cols-2">
                 <div className="aspect-video md:aspect-auto overflow-hidden">
                   <img
-                    src={blogPosts[0].image}
-                    alt={blogPosts[0].title}
+                    src={blogWellness}
+                    alt="The Science Behind Sustainable Fat Loss"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <CardContent className="p-8 md:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full">
-                      {blogPosts[0].category}
+                      Nutrition
                     </span>
-                    <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      {blogPosts[0].date}
+                    <span className="text-sm text-muted-foreground">
+                      March 15, 2024
                     </span>
                   </div>
                   <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
-                    {blogPosts[0].title}
+                    The Science Behind Sustainable Fat Loss: What the Research Actually Says
                   </h2>
                   <p className="font-body text-muted-foreground mb-6 leading-relaxed">
-                    {blogPosts[0].excerpt}
+                    Forget the fads and quick fixes. We dive deep into the peer-reviewed research to explain 
+                    exactly how sustainable fat loss works—and why most diets fail long-term. Understanding 
+                    the science puts you in control of your results.
                   </p>
                   <Button className="w-fit">
                     Read Article
@@ -142,11 +81,33 @@ const Blog = () => {
             </Card>
           </motion.div>
 
-          {/* Other Posts */}
+          {/* Blog Post Grid - 3 columns */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.slice(1).map((post, index) => (
+            {[
+              {
+                image: blogBreakfast,
+                category: "Meal Planning",
+                date: "February 28, 2024",
+                title: "10 High-Protein Breakfast Ideas That Actually Keep You Full Until Lunch",
+                excerpt: "Starting your day with adequate protein isn't just good for muscle—it regulates appetite hormones, stabilises blood sugar, and sets you up for better food choices all day long."
+              },
+              {
+                image: blogNutrition,
+                category: "Sports Nutrition",
+                date: "February 14, 2024",
+                title: "Fuelling Your Workouts: A Practical Guide to Pre and Post-Exercise Nutrition",
+                excerpt: "Timing your nutrition around exercise isn't just for elite athletes. Learn the evidence-based principles behind workout fuelling and how to apply them to your training routine."
+              },
+              {
+                image: blogWellness,
+                category: "Wellness",
+                date: "January 30, 2024",
+                title: "Why Sleep Is the Most Underrated Tool for Weight Management",
+                excerpt: "Poor sleep doesn't just leave you tired—it disrupts hunger hormones, increases cravings for high-calorie foods, and can sabotage even the best nutrition plan."
+              }
+            ].map((post, index) => (
               <motion.div
-                key={post.id}
+                key={post.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -183,7 +144,7 @@ const Blog = () => {
             ))}
           </div>
 
-          {/* Newsletter */}
+          {/* Newsletter CTA */}
           <motion.div
             className="mt-16 bg-primary rounded-2xl p-8 md:p-12 text-center"
             initial={{ opacity: 0, y: 30 }}
