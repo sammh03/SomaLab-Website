@@ -393,7 +393,7 @@ const About = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="font-medium border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="font-medium bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
               >
                 <Link to="/services">View Our Services</Link>
               </Button>
