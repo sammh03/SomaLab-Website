@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Brand Column */}
             <div className="space-y-4">
-              <img src={logo} alt="SomaLab" className="h-16 w-auto brightness-0 invert" />
+              <img src={logo} alt="SomaLab logo" className="h-16 w-auto brightness-0 invert" loading="lazy" decoding="async" />
               <p className="font-body text-sm opacity-80 leading-relaxed">
                 SomaLab provides evidence-based nutrition consulting to help health-conscious Australians achieve
                 sustainable fat loss, peak performance, and genuine wellbeing.

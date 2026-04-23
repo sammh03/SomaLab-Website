@@ -69,8 +69,10 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt="Fresh healthy foods and nutritious ingredients"
+            alt="Fresh healthy whole foods and nutritious ingredients on a wooden surface"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
         </div>
@@ -240,8 +242,10 @@ const Index = () => {
             >
               <img
                 src={coachPortrait}
-                alt="SomaLab Founder - Nutrition Consultant and Health Coach"
+                alt="SomaLab founder — clinical nutrition and health specialist"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-xl"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
             

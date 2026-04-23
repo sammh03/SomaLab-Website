@@ -172,7 +172,7 @@ const ArticleCard = ({
       <Card className="overflow-hidden">
         <div className="grid md:grid-cols-2">
           <div className="aspect-video md:aspect-auto overflow-hidden">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+            <img src={post.image} alt={post.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
           </div>
           <CardContent className="p-8 md:p-12 flex flex-col justify-center">
             <div className="flex items-center gap-4 mb-4">

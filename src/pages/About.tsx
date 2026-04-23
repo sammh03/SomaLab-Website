@@ -141,8 +141,10 @@ const About = () => {
             >
               <img
                 src={coachImage}
-                alt="SomaLab founder and nutrition consultant"
+                alt="SomaLab founder — Bachelor-qualified medical laboratory scientist and nutrition consultant"
                 className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
             <motion.div
