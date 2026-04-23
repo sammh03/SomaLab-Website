@@ -55,7 +55,7 @@
 							</a>
 						<?php endif; ?>
 
-						<?php $facebook_url = get_theme_mod( 'social_facebook', 'https://facebook.com/share/1KKJJyEUt' ); ?>
+						<?php $facebook_url = get_theme_mod( 'social_facebook', 'https://facebook.com/somalab' ); ?>
 						<?php if ( $facebook_url ) : ?>
 							<a href="<?php echo esc_url( $facebook_url ); ?>" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Follow SomaLab on Facebook">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
