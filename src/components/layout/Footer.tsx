@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone, Facebook } from "lucide-react";
+import { Instagram, Mail, Phone, Facebook, MapPin } from "lucide-react";
 import logo from "@/assets/somalab-logo.png";
 
 export const Footer = () => {
@@ -13,8 +13,8 @@ export const Footer = () => {
             <div className="space-y-4">
               <img src={logo} alt="SomaLab" className="h-16 w-auto brightness-0 invert" />
               <p className="font-body text-sm opacity-80 leading-relaxed">
-                SomaLab provides evidence-based nutrition consulting to help health-conscious 
-                Australians achieve sustainable fat loss, peak performance, and genuine wellbeing.
+                SomaLab provides evidence-based nutrition consulting to help health-conscious Australians achieve
+                sustainable fat loss, peak performance, and genuine wellbeing.
               </p>
             </div>
 
@@ -41,14 +41,24 @@ export const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-heading text-lg font-semibold">Contact</h4>
               <div className="flex flex-col gap-3">
-                <a href="mailto:info@somalab.com.au" className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center gap-2">
+                <a
+                  href="mailto:hello@somalab.com.au"
+                  className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center gap-2"
+                >
                   <Mail className="h-4 w-4" />
-                  info@somalab.com.au
+                  hello@somalab.com.au
                 </a>
-                <a href="tel:+61414430113" className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center gap-2">
+                <a
+                  href="tel:+61400000000"
+                  className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center gap-2"
+                >
                   <Phone className="h-4 w-4" />
-                  +61 414 430 113
+                  +61 400 000 000
                 </a>
+                <span className="font-body text-sm opacity-80 flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  Brisbane, Queensland, Australia
+                </span>
               </div>
             </div>
 
@@ -57,7 +67,7 @@ export const Footer = () => {
               <h4 className="font-heading text-lg font-semibold">Connect</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com/somalab"
+                  href="https://instagram.com/somalab.au"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
@@ -66,7 +76,7 @@ export const Footer = () => {
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://facebook.com/somalab"
+                  href="https://facebook.com/somalab.au"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
@@ -93,17 +103,20 @@ export const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="font-body text-xs opacity-60 mb-4 leading-relaxed text-center">
-              <strong>Disclaimer:</strong> The information provided by SomaLab is for general educational 
-              and informational purposes only. It is not intended as a substitute for professional medical 
-              advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified 
-              health provider with any questions you may have regarding a medical condition. Nutrition 
-              consulting services provided by SomaLab are intended to complement, not replace, medical care. 
-              Individual results may vary.
+              <strong>Disclaimer:</strong> The information provided by SomaLab is for general educational and
+              informational purposes only. It is not intended as a substitute for professional medical advice,
+              diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with
+              any questions you may have regarding a medical condition. Nutrition consulting services provided by
+              SomaLab are intended to complement, not replace, medical care. Individual results may vary.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs opacity-60">
-              <Link to="/privacy" className="hover:opacity-100 transition-opacity">Privacy Policy</Link>
+              <Link to="/privacy" className="hover:opacity-100 transition-opacity">
+                Privacy Policy
+              </Link>
               <span className="hidden sm:inline">•</span>
-              <Link to="/terms" className="hover:opacity-100 transition-opacity">Terms & Conditions</Link>
+              <Link to="/terms" className="hover:opacity-100 transition-opacity">
+                Terms & Conditions
+              </Link>
               <span className="hidden sm:inline">•</span>
               <span>ABN: 00 000 000 000</span>
             </div>
