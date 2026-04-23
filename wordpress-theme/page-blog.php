@@ -47,22 +47,19 @@ $has_posts = $blog_query->have_posts();
 	<!-- Coming Soon State -->
 	<section class="section-padding">
 		<div class="container">
-			<div class="fade-up" style="max-width: 42rem; margin: 0 auto; text-align: center;">
-				<div style="display: inline-flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; border-radius: 9999px; background-color: hsl(25, 90%, 55%, 0.1); margin-bottom: 2rem;">
-					<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+			<div class="fade-up" style="max-width: 36rem; margin: 0 auto; text-align: center;">
+				<div style="display: inline-flex; align-items: center; justify-content: center; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background-color: hsl(25, 90%, 55%, 0.1); margin-bottom: 1.5rem;">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
 						<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
 					</svg>
 				</div>
 
-				<div style="width: 3rem; height: 1px; background-color: var(--border); margin: 0 auto 2rem;"></div>
-
-				<h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.875rem); font-weight: 600; color: var(--fg); margin-bottom: 1rem;">
-					A premium editorial experience, in development
+				<h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.875rem); font-weight: 600; color: var(--fg); margin-bottom: 0.75rem;">
+					Good things take time.
 				</h2>
 				<p style="color: var(--muted-fg); line-height: 1.7;">
-					Carefully researched articles on nutrition science, training, recovery, and longevity &mdash;
-					written with the same rigor and intention as everything we do at SomaLab.
+					Real articles on nutrition, training, and longevity &mdash; coming soon.
 				</p>
 			</div>
 		</div>
