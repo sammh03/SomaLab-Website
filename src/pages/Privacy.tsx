@@ -70,10 +70,10 @@ const Privacy = () => {
                 You have the right to access, correct, or request deletion of your
                 personal information at any time. Contact us at{" "}
                 <a
-                  href="mailto:hello@somalab.com.au"
+                  href="mailto:info@somalab.com.au"
                   className="text-primary underline underline-offset-4 hover:text-accent transition-colors"
                 >
-                  hello@somalab.com.au
+                  info@somalab.com.au
                 </a>
                 .
               </p>
@@ -83,10 +83,10 @@ const Privacy = () => {
               <p>
                 For any privacy-related questions, please email{" "}
                 <a
-                  href="mailto:hello@somalab.com.au"
+                  href="mailto:info@somalab.com.au"
                   className="text-primary underline underline-offset-4 hover:text-accent transition-colors"
                 >
-                  hello@somalab.com.au
+                  info@somalab.com.au
                 </a>
                 .
               </p>

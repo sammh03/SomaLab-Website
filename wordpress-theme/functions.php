@@ -169,7 +169,7 @@ function somalab_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'google_reviews_url', array( 'label' => __( 'Google Reviews URL', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'url' ) );
 
 	// Contact info
-	$wp_customize->add_setting( 'contact_email', array( 'default' => 'hello@somalab.com.au', 'sanitize_callback' => 'sanitize_email' ) );
+	$wp_customize->add_setting( 'contact_email', array( 'default' => 'info@somalab.com.au', 'sanitize_callback' => 'sanitize_email' ) );
 	$wp_customize->add_control( 'contact_email', array( 'label' => __( 'Contact Email', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'email' ) );
 
 	$wp_customize->add_setting( 'contact_phone', array( 'default' => '+61400000000', 'sanitize_callback' => 'sanitize_text_field' ) );
