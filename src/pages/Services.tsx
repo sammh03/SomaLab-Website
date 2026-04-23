@@ -131,7 +131,7 @@ const Services = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="section-padding bg-secondary pt-32">
+      <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
