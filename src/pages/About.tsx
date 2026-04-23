@@ -383,10 +383,10 @@ const About = () => {
                 variant="secondary"
                 className="font-medium"
               >
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   Book Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </Link>
               </Button>
               <Button
                 asChild

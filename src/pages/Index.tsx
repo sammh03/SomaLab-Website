@@ -80,10 +80,10 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-base">
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   Book a Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-base">
                 <Link to="/services">View Our Services</Link>
@@ -281,10 +281,10 @@ const Index = () => {
               variant="secondary"
               className="text-base"
             >
-              <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+              <Link to="/contact">
                 Book Your Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              </Link>
             </Button>
           </motion.div>
         </div>
