@@ -165,21 +165,15 @@ function somalab_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( 'footer_tagline', array( 'label' => __( 'Footer Tagline', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'textarea' ) );
 
-	$wp_customize->add_setting( 'google_reviews_url', array( 'default' => 'https://www.google.com/maps', 'sanitize_callback' => 'esc_url_raw' ) );
-	$wp_customize->add_control( 'google_reviews_url', array( 'label' => __( 'Google Reviews URL', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'url' ) );
-
 	// Contact info
 	$wp_customize->add_setting( 'contact_email', array( 'default' => 'info@somalab.com.au', 'sanitize_callback' => 'sanitize_email' ) );
 	$wp_customize->add_control( 'contact_email', array( 'label' => __( 'Contact Email', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'email' ) );
 
-	$wp_customize->add_setting( 'contact_phone', array( 'default' => '+61400000000', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_setting( 'contact_phone', array( 'default' => '+61414430113', 'sanitize_callback' => 'sanitize_text_field' ) );
 	$wp_customize->add_control( 'contact_phone', array( 'label' => __( 'Phone (tel: format)', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'text' ) );
 
-	$wp_customize->add_setting( 'contact_phone_display', array( 'default' => '+61 400 000 000', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_setting( 'contact_phone_display', array( 'default' => '+61 414 430 113', 'sanitize_callback' => 'sanitize_text_field' ) );
 	$wp_customize->add_control( 'contact_phone_display', array( 'label' => __( 'Phone (display)', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'text' ) );
-
-	$wp_customize->add_setting( 'contact_location', array( 'default' => 'Brisbane, Queensland, Australia', 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control( 'contact_location', array( 'label' => __( 'Location', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'text' ) );
 
 	// Social URLs
 	$wp_customize->add_setting( 'social_instagram', array( 'default' => 'https://instagram.com/somalab', 'sanitize_callback' => 'esc_url_raw' ) );
