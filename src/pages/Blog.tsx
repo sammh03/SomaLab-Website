@@ -69,25 +69,21 @@ const Blog = () => {
         <section className="section-padding">
           <div className="container mx-auto px-4">
             <motion.div
-              className="max-w-2xl mx-auto text-center"
+              className="max-w-xl mx-auto text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-8">
-                <BookOpen className="w-7 h-7 text-accent" strokeWidth={1.5} />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-6">
+                <BookOpen className="w-6 h-6 text-accent" strokeWidth={1.5} />
               </div>
 
-              <div className="w-12 h-px bg-border mx-auto mb-8" />
-
-              <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                A premium editorial experience, in development
+              <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground mb-3">
+                Good things take time.
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed">
-                Carefully researched articles on nutrition science, training, recovery,
-                and longevity — written with the same rigor and intention as everything
-                we do at SomaLab.
+                Real articles on nutrition, training, and longevity — coming soon.
               </p>
             </motion.div>
           </div>
