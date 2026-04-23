@@ -154,8 +154,7 @@ const About = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   Today, SomaLab combines my clinical background with a deep commitment to 
                   helping health-conscious Australians achieve sustainable fat loss, improved 
-                  performance, and genuine wellbeing. No quick fixes. No one-size-fits-all 
-                  plans. Just evidence-based strategies that work.
+                  performance, and genuine wellbeing.&nbsp;
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
