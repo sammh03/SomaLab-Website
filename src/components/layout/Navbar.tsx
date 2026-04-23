@@ -4,6 +4,7 @@ import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import logo from "@/assets/somalab-logo.png";
+import wordmark from "@/assets/somalab-wordmark.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -24,7 +25,7 @@ export const Navbar = () => {
         <nav className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="SomaLab" className="h-20 w-auto" />
-            <span className="font-heading text-2xl font-bold text-foreground">Soma<span className="text-accent">Lab</span></span>
+            <img src={wordmark} alt="SomaLab" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Nav */}

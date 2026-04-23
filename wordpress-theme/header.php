@@ -24,7 +24,7 @@ if ( has_custom_logo() ) {
 	<div class="container">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand">
 			<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?>">
-			<span class="text-gradient"><?php bloginfo( 'name' ); ?></span>
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/somalab-wordmark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="navbar-wordmark">
 		</a>
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
