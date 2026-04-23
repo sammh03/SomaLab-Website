@@ -63,7 +63,7 @@ const Store = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button asChild size="lg">
-                <a href="mailto:hello@somalab.com.au?subject=Notify me when the SomaLab Store launches">
+                <a href="mailto:info@somalab.com.au?subject=Notify me when the SomaLab Store launches">
                   Notify Me
                 </a>
               </Button>

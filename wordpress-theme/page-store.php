@@ -7,7 +7,7 @@
 
 get_header();
 
-$contact_email = get_theme_mod( 'contact_email', 'hello@somalab.com.au' );
+$contact_email = get_theme_mod( 'contact_email', 'info@somalab.com.au' );
 ?>
 
 <section class="store-coming-soon" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 8rem 0 6rem; background-color: var(--secondary);">

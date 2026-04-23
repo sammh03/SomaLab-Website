@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone, Facebook, MapPin } from "lucide-react";
+import { Instagram, Mail, Phone, Facebook } from "lucide-react";
 import logo from "@/assets/somalab-logo.png";
 
 export const Footer = () => {
@@ -41,18 +41,14 @@ export const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-heading text-lg font-semibold">Contact</h4>
               <div className="flex flex-col gap-3">
-                <a href="mailto:hello@somalab.com.au" className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center gap-2">
+                <a href="mailto:info@somalab.com.au" className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  hello@somalab.com.au
+                  info@somalab.com.au
                 </a>
-                <a href="tel:+61400000000" className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center gap-2">
+                <a href="tel:+61414430113" className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  +61 400 000 000
+                  +61 414 430 113
                 </a>
-                <span className="font-body text-sm opacity-80 flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  Brisbane, Queensland, Australia
-                </span>
               </div>
             </div>
 
