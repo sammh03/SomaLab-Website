@@ -197,6 +197,11 @@ img {
   width: auto;
 }
 
+.navbar-brand .navbar-wordmark {
+  height: 2rem;
+  width: auto;
+}
+
 .navbar-brand span {
   font-family: var(--font-heading);
   font-size: 1.5rem;
