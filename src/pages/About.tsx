@@ -2,7 +2,21 @@ import { motion } from "framer-motion";
 import { Heart, Target, Users, Leaf, CheckCircle, ArrowRight, Award, BookOpen, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
+import { SITE_URL, personSchema } from "@/lib/seo-config";
 import coachImage from "@/assets/coach-portrait.jpg";
+
+const aboutSchemas = [
+  personSchema,
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "About", item: `${SITE_URL}/about` },
+    ],
+  },
+];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -82,6 +96,13 @@ const processSteps = [
 const About = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="About SomaLab — Clinical Nutrition & Health Specialist"
+        description="Founded by a Bachelor-qualified medical laboratory scientist and clinical nutrition consultant, SomaLab bridges science and practical, sustainable wellness for Australians."
+        canonicalPath="/about"
+        schemas={aboutSchemas}
+        ogType="profile"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4">
@@ -120,8 +141,10 @@ const About = () => {
             >
               <img
                 src={coachImage}
-                alt="SomaLab founder and nutrition consultant"
+                alt="SomaLab founder — Bachelor-qualified medical laboratory scientist and nutrition consultant"
                 className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
             <motion.div

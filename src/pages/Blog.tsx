@@ -1,6 +1,26 @@
 import { motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
+import { SITE_URL } from "@/lib/seo-config";
+
+const blogSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "SomaLab Journal",
+    url: `${SITE_URL}/blog`,
+    publisher: { "@id": `${SITE_URL}/#business` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+    ],
+  },
+];
 
 /**
  * Blog / Journal Page
@@ -41,6 +61,12 @@ const Blog = () => {
 
   return (
     <div>
+      <SEO
+        title="Health & Nutrition Journal — Evidence-Based Insights"
+        description="The SomaLab Journal: science-backed articles on nutrition, fat loss, performance, and sustainable health for Australians."
+        canonicalPath="/blog"
+        schemas={blogSchemas}
+      />
       {/* Hero Section */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4 text-center">
@@ -146,7 +172,7 @@ const ArticleCard = ({
       <Card className="overflow-hidden">
         <div className="grid md:grid-cols-2">
           <div className="aspect-video md:aspect-auto overflow-hidden">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+            <img src={post.image} alt={post.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
           </div>
           <CardContent className="p-8 md:p-12 flex flex-col justify-center">
             <div className="flex items-center gap-4 mb-4">

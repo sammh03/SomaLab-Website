@@ -2,8 +2,21 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Leaf, Heart, Users, FlaskConical, Clock, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
+import { SITE_URL, personSchema } from "@/lib/seo-config";
 import heroImage from "@/assets/hero-image.jpg";
 import coachPortrait from "@/assets/coach-portrait.jpg";
+
+const homepageSchemas = [
+  personSchema,
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    ],
+  },
+];
 
 // (Google Reviews removed for now)
 
@@ -44,13 +57,22 @@ const fadeInUp = {
 const Index = () => {
   return (
     <div>
+      <SEO
+        title="SomaLab | Evidence-Based Nutrition Coaching Australia"
+        description="Personalised, science-backed nutrition coaching for sustainable fat loss, peak performance, and total wellbeing. Serving Brisbane, Gold Coast & Australia-wide. Book your free consultation."
+        canonicalPath="/"
+        noSuffix
+        schemas={homepageSchemas}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt="Fresh healthy foods and nutritious ingredients"
+            alt="Fresh healthy whole foods and nutritious ingredients on a wooden surface"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
         </div>
@@ -220,8 +242,10 @@ const Index = () => {
             >
               <img
                 src={coachPortrait}
-                alt="SomaLab Founder - Nutrition Consultant and Health Coach"
+                alt="SomaLab founder — clinical nutrition and health specialist"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-xl"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
             

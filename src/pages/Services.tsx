@@ -3,8 +3,61 @@ import { Link } from "react-router-dom";
 import { Check, X, ArrowRight, Clock, Calendar, Sparkles, Crown, Flame, ClipboardList, Pill, Activity, FlaskConical, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
+import { SITE_URL, BUSINESS } from "@/lib/seo-config";
 
 const BOOKING_URL = "/contact";
+
+/** Service catalog as Schema.org Service items — keeps schema in sync with displayed pricing. */
+const servicesSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Nutrition Consultation",
+    name: "Initial Nutrition Consultation",
+    description: "60-minute deep-dive consultation with personalised advice, goal setting and a clear plan.",
+    provider: { "@id": `${SITE_URL}/#business` },
+    areaServed: BUSINESS.areaServed.map((name) => ({ "@type": "Place", name })),
+    offers: {
+      "@type": "Offer",
+      price: "149",
+      priceCurrency: "AUD",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}/contact`,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "12-Week Transformation Program",
+    name: "12-Week Nutrition Transformation Program",
+    description: "Structured 12-week coaching program across Foundation, Optimisation and Transformation phases. Tiers: Essential, Advanced, Elite.",
+    provider: { "@id": `${SITE_URL}/#business` },
+    areaServed: BUSINESS.areaServed.map((name) => ({ "@type": "Place", name })),
+    offers: [
+      { "@type": "Offer", name: "Essential", price: "1200", priceCurrency: "AUD", url: `${SITE_URL}/contact` },
+      { "@type": "Offer", name: "Advanced", price: "1800", priceCurrency: "AUD", url: `${SITE_URL}/contact` },
+      { "@type": "Offer", name: "Elite", price: "2800", priceCurrency: "AUD", url: `${SITE_URL}/contact` },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Health Biomarker Analysis",
+    name: "Health Biomarker & Blood Analysis",
+    description: "Data-driven biomarker review to personalise nutrition coaching using real biological insights.",
+    provider: { "@id": `${SITE_URL}/#business` },
+    offers: { "@type": "Offer", price: "109", priceCurrency: "AUD", url: `${SITE_URL}/contact` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+    ],
+  },
+];
 
 const consultations = [
   {
@@ -121,6 +174,12 @@ const notForYou = [
 const Services = () => {
   return (
     <div>
+      <SEO
+        title="Services & Pricing — 1:1 Coaching, 12-Week Program & Biomarker Analysis"
+        description="Premium nutrition coaching: $149 initial consults, $1,200–$2,800 12-week transformation programs, and $109 health biomarker analysis. Brisbane, Gold Coast & Australia-wide."
+        canonicalPath="/services"
+        schemas={servicesSchemas}
+      />
       {/* Hero */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4 text-center">

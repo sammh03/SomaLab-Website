@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const NotFound = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const NotFound = () => {
 
   return (
     <section className="section-padding bg-secondary min-h-[80vh] flex items-center">
+      <SEO title="Page Not Found" description="The page you're looking for doesn't exist." noIndex />
       <div className="container mx-auto px-4">
         <motion.div
           className="max-w-xl mx-auto text-center"

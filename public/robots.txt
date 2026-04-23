@@ -1,4 +1,15 @@
+# SomaLab — robots.txt
+# Allow all reputable crawlers full access. Sitemap below.
+
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Explicit allows for major crawlers (defensive)
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
@@ -10,5 +21,7 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+Sitemap: https://somalab.com.au/sitemap.xml

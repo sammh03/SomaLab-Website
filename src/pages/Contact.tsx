@@ -14,6 +14,26 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
+import { SITE_URL } from "@/lib/seo-config";
+
+const contactSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact SomaLab",
+    url: `${SITE_URL}/contact`,
+    mainEntity: { "@id": `${SITE_URL}/#business` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_URL}/contact` },
+    ],
+  },
+];
 
 const CONTACT_EMAIL = "info@somalab.com.au";
 
@@ -117,6 +137,12 @@ const Contact = () => {
 
   return (
     <div>
+      <SEO
+        title="Contact SomaLab — Book Your Free Discovery Call"
+        description="Get in touch with SomaLab to book a free 15–20 minute discovery call. Personalised, evidence-based nutrition coaching across Brisbane, Gold Coast and Australia-wide."
+        canonicalPath="/contact"
+        schemas={contactSchemas}
+      />
       {/* Hero */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4 text-center">

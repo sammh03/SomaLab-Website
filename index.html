@@ -3,65 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SomaLab | Nutrition Consultant Australia | Personalised Health Coaching</title>
+    <meta name="theme-color" content="#0F172A" />
+
+    <!-- Default SEO (overridden per-route by react-helmet-async) -->
+    <title>SomaLab | Evidence-Based Nutrition Coaching Australia</title>
     <meta
       name="description"
-      content="SomaLab offers evidence-based nutrition consulting in Australia. Achieve sustainable fat loss, improved energy, and peak performance with personalised nutrition coaching. Book your free consultation today."
+      content="Personalised, science-backed nutrition coaching for sustainable fat loss, peak performance, and total wellbeing. Serving Brisbane, Gold Coast & Australia-wide."
     />
     <meta name="author" content="SomaLab" />
     <meta
       name="keywords"
-      content="nutrition consultant Australia, personalised nutrition coaching, health optimisation program, evidence-based nutrition, weight loss consultant, sports nutrition, wellness coaching Australia, SomaLab"
+      content="nutrition consultant Australia, nutrition coach Brisbane, nutrition coach Gold Coast, personalised nutrition coaching, evidence-based nutrition, weight loss consultant, sports nutrition, biomarker analysis, wellness coaching Australia, SomaLab"
     />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://somalab.com.au" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="geo.region" content="AU-QLD" />
+    <meta name="geo.placename" content="Brisbane" />
+    <link rel="canonical" href="https://somalab.com.au/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://somalab.com.au" />
-    <meta property="og:title" content="SomaLab | Evidence-Based Nutrition Consulting Australia" />
+    <meta property="og:url" content="https://somalab.com.au/" />
+    <meta property="og:title" content="SomaLab | Evidence-Based Nutrition Coaching Australia" />
     <meta
       property="og:description"
-      content="Achieve sustainable fat loss and optimal health with personalised, science-backed nutrition coaching from SomaLab. Book your free consultation today."
+      content="Personalised, science-backed nutrition coaching for sustainable fat loss, peak performance, and genuine wellbeing."
     />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://somalab.com.au/og-image.jpg" />
     <meta property="og:locale" content="en_AU" />
     <meta property="og:site_name" content="SomaLab" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@SomaLab" />
     <meta name="twitter:title" content="SomaLab | Nutrition Consultant Australia" />
     <meta
       name="twitter:description"
-      content="Evidence-based nutrition coaching for sustainable health results. Personalised plans, ongoing support, real results."
+      content="Evidence-based nutrition coaching for sustainable health results. Brisbane, Gold Coast & Australia-wide."
     />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:image" content="https://somalab.com.au/og-image.jpg" />
 
-    <!-- Additional SEO -->
-    <meta name="geo.region" content="AU" />
+    <!-- Performance: preconnect & DNS prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Schema.org structured data -->
+    <!-- Sitemap discovery -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- Site-wide structured data: LocalBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": ["ProfessionalService", "HealthAndBeautyBusiness"],
+        "@id": "https://somalab.com.au/#business",
         "name": "SomaLab",
-        "description": "Evidence-based nutrition consulting and health coaching services in Australia",
+        "legalName": "SomaLab Nutrition Consulting",
+        "description": "Evidence-based nutrition consulting and health coaching services in Australia. Serving Brisbane, Gold Coast, and Australia-wide.",
         "url": "https://somalab.com.au",
         "telephone": "+61414430113",
         "email": "info@somalab.com.au",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "AU"
-        },
+        "image": "https://somalab.com.au/og-image.jpg",
         "priceRange": "$$",
         "openingHours": "Mo-Fr 09:00-17:00",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AU",
+          "addressRegion": "QLD"
+        },
+        "areaServed": [
+          { "@type": "Place", "name": "Brisbane" },
+          { "@type": "Place", "name": "Gold Coast" },
+          { "@type": "Place", "name": "Sunshine Coast" },
+          { "@type": "Place", "name": "Queensland" },
+          { "@type": "Place", "name": "Australia" }
+        ],
         "sameAs": [
           "https://instagram.com/somalab.au",
           "https://facebook.com/somalab"
         ],
-        "serviceType": ["Nutrition Consulting", "Health Coaching", "Weight Management", "Sports Nutrition"]
+        "serviceType": ["Nutrition Consulting", "Health Coaching", "Weight Management", "Sports Nutrition", "Biomarker Analysis"]
       }
     </script>
   </head>
@@ -71,3 +91,4 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+

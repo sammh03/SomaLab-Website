@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 const Terms = () => {
   return (
     <div>
+      <SEO
+        title="Terms & Conditions"
+        description="Terms and conditions governing the use of SomaLab nutrition consulting services."
+        canonicalPath="/terms"
+      />
       {/* Hero */}
       <section className="section-padding bg-secondary pt-32 pb-12">
         <div className="container mx-auto px-4 text-center">
