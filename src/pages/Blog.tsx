@@ -1,6 +1,26 @@
 import { motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
+import { SITE_URL } from "@/lib/seo-config";
+
+const blogSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "SomaLab Journal",
+    url: `${SITE_URL}/blog`,
+    publisher: { "@id": `${SITE_URL}/#business` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+    ],
+  },
+];
 
 /**
  * Blog / Journal Page

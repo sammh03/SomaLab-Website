@@ -96,6 +96,13 @@ const processSteps = [
 const About = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="About SomaLab — Clinical Nutrition & Health Specialist"
+        description="Founded by a Bachelor-qualified medical laboratory scientist and clinical nutrition consultant, SomaLab bridges science and practical, sustainable wellness for Australians."
+        canonicalPath="/about"
+        schemas={aboutSchemas}
+        ogType="profile"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4">

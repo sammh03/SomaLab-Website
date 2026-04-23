@@ -2,10 +2,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const Store = () => {
   return (
     <div>
+      <SEO
+        title="SomaLab Store — Premium Health & Nutrition Products"
+        description="Curated health and nutrition products from SomaLab. Premium supplements and wellness essentials, launching soon."
+        canonicalPath="/store"
+      />
       <section className="min-h-[80vh] flex items-center justify-center section-padding bg-secondary">
         <div className="container mx-auto px-4">
           <motion.div

@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 const Privacy = () => {
   return (
     <div>
+      <SEO
+        title="Privacy Policy"
+        description="How SomaLab collects, uses, and protects your personal information in accordance with Australian privacy law."
+        canonicalPath="/privacy"
+      />
       {/* Hero */}
       <section className="section-padding bg-secondary pt-32 pb-12">
         <div className="container mx-auto px-4 text-center">
