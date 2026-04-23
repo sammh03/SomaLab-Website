@@ -174,6 +174,12 @@ const notForYou = [
 const Services = () => {
   return (
     <div>
+      <SEO
+        title="Services & Pricing — 1:1 Coaching, 12-Week Program & Biomarker Analysis"
+        description="Premium nutrition coaching: $149 initial consults, $1,200–$2,800 12-week transformation programs, and $109 health biomarker analysis. Brisbane, Gold Coast & Australia-wide."
+        canonicalPath="/services"
+        schemas={servicesSchemas}
+      />
       {/* Hero */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4 text-center">

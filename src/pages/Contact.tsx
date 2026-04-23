@@ -137,6 +137,12 @@ const Contact = () => {
 
   return (
     <div>
+      <SEO
+        title="Contact SomaLab — Book Your Free Discovery Call"
+        description="Get in touch with SomaLab to book a free 15–20 minute discovery call. Personalised, evidence-based nutrition coaching across Brisbane, Gold Coast and Australia-wide."
+        canonicalPath="/contact"
+        schemas={contactSchemas}
+      />
       {/* Hero */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4 text-center">
