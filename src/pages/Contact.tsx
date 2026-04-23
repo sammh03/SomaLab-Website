@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
-import { SITE_URL, BUSINESS } from "@/lib/seo-config";
+import { SITE_URL } from "@/lib/seo-config";
 
 const contactSchemas = [
   {

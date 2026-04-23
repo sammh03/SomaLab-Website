@@ -61,6 +61,12 @@ const Blog = () => {
 
   return (
     <div>
+      <SEO
+        title="Health & Nutrition Journal — Evidence-Based Insights"
+        description="The SomaLab Journal: science-backed articles on nutrition, fat loss, performance, and sustainable health for Australians."
+        canonicalPath="/blog"
+        schemas={blogSchemas}
+      />
       {/* Hero Section */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4 text-center">
