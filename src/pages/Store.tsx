@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const Store = () => {
   return (
     <div>
-      <section className="min-h-screen flex items-center justify-center section-padding pt-32 bg-secondary">
+      <section className="min-h-[80vh] flex items-center justify-center section-padding bg-secondary">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
