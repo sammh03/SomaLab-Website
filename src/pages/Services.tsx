@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check, X, ArrowRight, Clock, Calendar, Sparkles, Crown, Flame, ClipboardList, Pill, Activity } from "lucide-react";
+import { Check, X, ArrowRight, Clock, Calendar, Sparkles, Crown, Flame, ClipboardList, Pill, Activity, FlaskConical, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -375,6 +375,127 @@ const Services = () => {
                 <span className="font-heading text-xl font-bold text-foreground">{addon.price}</span>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Health Biomarker & Blood Analysis — Premium Add-On */}
+      <section className="section-padding">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-accent/10 text-accent rounded-full">
+              Premium Add-On
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Health Biomarker & Blood Analysis
+            </h2>
+            <p className="text-muted-foreground">
+              A data-driven enhancement to your coaching — using real biological markers to personalise nutrition,
+              uncover hidden imbalances and accelerate results from the 12-Week Transformation Program.
+            </p>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className="border-accent/40 shadow-lg overflow-hidden">
+                <CardHeader className="border-b border-border/60 bg-secondary/40">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-accent text-accent-foreground rounded-lg flex items-center justify-center shrink-0">
+                      <FlaskConical className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="font-heading text-2xl">Evidence-Based Optimisation</CardTitle>
+                      <CardDescription className="font-body mt-1">
+                        Personalised coaching, informed by your own biology — not guesswork.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+
+                <CardContent className="pt-8">
+                  <div className="grid md:grid-cols-2 gap-10">
+                    {/* What's included */}
+                    <div>
+                      <h3 className="font-heading text-lg font-semibold text-foreground mb-4">
+                        What's included
+                      </h3>
+                      <ul className="space-y-3">
+                        {[
+                          "Guidance on appropriate pathology testing based on your goals",
+                          "Review and interpretation of blood test results",
+                          "Integration of findings into your nutrition and lifestyle plan",
+                          "Adjustments to coaching strategy based on biomarkers",
+                          "Optional follow-up summary or review discussion",
+                        ].map((item) => (
+                          <li key={item} className="flex items-start gap-2">
+                            <Check className="h-4 w-4 text-accent shrink-0 mt-1" />
+                            <span className="font-body text-sm text-foreground/90">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Who it's for */}
+                    <div>
+                      <h3 className="font-heading text-lg font-semibold text-foreground mb-4">
+                        Who this is for
+                      </h3>
+                      <ul className="space-y-3">
+                        {[
+                          "Clients wanting deeper optimisation beyond standard coaching",
+                          "Individuals experiencing plateaus or unclear symptoms",
+                          "Performance-focused clients seeking objective health insights",
+                        ].map((item) => (
+                          <li key={item} className="flex items-start gap-2">
+                            <Sparkles className="h-4 w-4 text-accent shrink-0 mt-1" />
+                            <span className="font-body text-sm text-foreground/90">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Pricing */}
+                  <div className="mt-10 p-6 rounded-xl bg-secondary/60 border border-border flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                      <div className="text-sm font-medium text-accent mb-1">Service Fee</div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-heading text-4xl font-bold text-foreground">$109</span>
+                        <span className="text-muted-foreground text-sm">+ pathology testing costs</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-2">
+                        Pathology costs vary depending on the tests required.
+                      </p>
+                    </div>
+                    <Button asChild size="lg">
+                      <Link to={BOOKING_URL}>
+                        Enquire About Biomarker Analysis
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+
+                  {/* Disclaimer */}
+                  <div className="mt-6 flex items-start gap-3 p-4 rounded-lg border border-border/70 bg-background">
+                    <Info className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      This service is designed to support nutrition and lifestyle optimisation through
+                      interpretation of pathology results and does not replace medical diagnosis or treatment.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
