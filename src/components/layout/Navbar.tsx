@@ -23,9 +23,9 @@ export const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="SomaLab" className="h-20 w-auto" />
-            <img src={wordmark} alt="SomaLab" className="h-8 w-auto" />
+          <Link to="/" className="flex items-center gap-2.5" aria-label="SomaLab — Home">
+            <img src={logo} alt="" className="h-12 md:h-14 w-auto" />
+            <img src={wordmark} alt="SomaLab" className="h-6 md:h-7 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
