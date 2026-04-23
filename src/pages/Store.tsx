@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -68,9 +69,9 @@ const Store = () => {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   Book a Consultation
-                </a>
+                </Link>
               </Button>
             </motion.div>
           </motion.div>

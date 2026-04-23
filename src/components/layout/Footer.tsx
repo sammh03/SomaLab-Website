@@ -34,6 +34,9 @@ export const Footer = () => {
                 <Link to="/store" className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity">
                   Store
                 </Link>
+                <Link to="/contact" className="font-body text-sm opacity-80 hover:opacity-100 transition-opacity">
+                  Contact
+                </Link>
               </div>
             </div>
 
@@ -81,14 +84,12 @@ export const Footer = () => {
                   <Facebook className="h-5 w-5" />
                 </a>
               </div>
-              <a
-                href="https://calendly.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
                 className="inline-block font-body text-sm font-medium bg-accent text-accent-foreground px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors"
               >
                 Book a Consultation
-              </a>
+              </Link>
             </div>
           </div>
         </div>

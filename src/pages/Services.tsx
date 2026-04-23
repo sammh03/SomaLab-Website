@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Check, X, ArrowRight, Clock, Calendar, Sparkles, Crown, Flame, ClipboardList, Pill, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
-const BOOKING_URL = "https://calendly.com";
+const BOOKING_URL = "/contact";
 
 const consultations = [
   {
@@ -195,10 +196,10 @@ const Services = () => {
                   </CardContent>
                   <CardFooter>
                     <Button asChild className="w-full" variant="outline">
-                      <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                      <Link to={BOOKING_URL}>
                         {c.cta}
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </a>
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>
@@ -285,10 +286,10 @@ const Services = () => {
                       variant={tier.popular ? "default" : "outline"}
                       size="lg"
                     >
-                      <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                      <Link to={BOOKING_URL}>
                         {tier.cta}
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </a>
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>
@@ -461,10 +462,10 @@ const Services = () => {
               help you decide if SomaLab is the right fit. No pressure, no obligations.
             </p>
             <Button asChild size="lg" variant="secondary" className="text-base">
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <Link to={BOOKING_URL}>
                 Book Your Free Discovery Call
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              </Link>
             </Button>
           </motion.div>
         </div>

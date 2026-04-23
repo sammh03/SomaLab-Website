@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Services", path: "/services" },
   { name: "Store", path: "/store" },
   { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
 ];
 
 export const Navbar = () => {
@@ -55,9 +56,7 @@ export const Navbar = () => {
               )}
             </Link>
             <Button asChild variant="default" size="sm">
-              <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-                Book Now
-              </a>
+              <Link to="/contact">Book Now</Link>
             </Button>
           </div>
 
@@ -94,9 +93,7 @@ export const Navbar = () => {
                 </Link>
               ))}
               <Button asChild variant="default" size="sm" className="w-fit">
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-                  Book Now
-                </a>
+                <Link to="/contact" onClick={() => setIsOpen(false)}>Book Now</Link>
               </Button>
             </div>
           </div>
