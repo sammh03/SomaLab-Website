@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { JournalCard } from "@/components/journal/JournalCard";
-import { journalArticles } from "@/data/journal";
-import journalHero from "@/assets/journal-hero.jpg";
+import blogNutrition from "@/assets/blog-nutrition.jpg";
+import blogWellness from "@/assets/blog-wellness.jpg";
+import blogBreakfast from "@/assets/blog-breakfast.jpg";
 
 const newsletterSchema = z.object({
   email: z
@@ -33,116 +35,174 @@ const Blog = () => {
     }
 
     setSubmitting(true);
-    const subject = encodeURIComponent("Notify me — SomaLab Journal");
+    const subject = encodeURIComponent("Newsletter Subscription Request");
     const body = encodeURIComponent(
-      `Please notify the following email when the SomaLab Journal launches:\n\n${result.data.email}`
+      `Please subscribe the following email address to the SomaLab newsletter:\n\n${result.data.email}`
     );
     window.location.href = `mailto:hello@somalab.com.au?subject=${subject}&body=${body}`;
 
     toast({
-      title: "Almost there",
-      description: "Your email app will open to confirm.",
+      title: "Almost there!",
+      description: "Your email app will open to confirm your subscription request.",
     });
     setEmail("");
     setSubmitting(false);
   };
 
   return (
-    <div className="bg-background">
-      {/* ───────── Hero ───────── */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <img
-            src={journalHero}
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10 pt-24 pb-20">
+    <div>
+      {/* Hero Section */}
+      <section className="section-padding bg-secondary pt-32">
+        <div className="container mx-auto px-4 text-center">
           <motion.div
-            className="max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6 }}
           >
-            <span className="inline-block font-body text-[0.7rem] tracking-[0.3em] uppercase text-primary mb-8">
-              The SomaLab Journal
+            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-accent/10 text-accent rounded-full">
+              SomaLab Blog
             </span>
-
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.05] mb-8">
-              Insights & Research
-              <br />
-              <span className="italic text-primary/90">Coming Soon</span>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              Evidence-Based Health Insights
             </h1>
-
-            <div className="h-px w-16 bg-foreground/30 mb-8" />
-
-            <p className="font-body text-lg md:text-xl text-foreground/75 leading-relaxed max-w-xl">
-              We're building a space for science-backed insights, education and
-              optimisation. A quiet corner of the internet for those who care
-              deeply about how their body works.
+            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
+              Cutting through the noise with science-backed nutrition advice, practical wellness tips, 
+              and delicious recipes to support your health journey.
+            </p>
+            <p className="font-body text-sm text-muted-foreground max-w-xl mx-auto">
+              All content is written by qualified nutrition professionals and referenced to current research. 
+              No fads, no quick fixes—just trustworthy information you can use.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ───────── Article Grid ───────── */}
-      <section className="py-20 md:py-32">
+      {/* Blog Posts */}
+      <section className="section-padding">
         <div className="container mx-auto px-4">
-          {/* Section heading */}
+          {/* Featured Post */}
           <motion.div
-            className="max-w-2xl mb-16 md:mb-24"
-            initial={{ opacity: 0, y: 20 }}
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
           >
-            <span className="font-body text-[0.7rem] tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
-              In Preparation
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground leading-tight">
-              A considered library of essays, research breakdowns and protocols.
-            </h2>
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2">
+                <div className="aspect-video md:aspect-auto overflow-hidden">
+                  <img
+                    src={blogWellness}
+                    alt="The Science Behind Sustainable Fat Loss"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-8 md:p-12 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full">
+                      Nutrition
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      March 15, 2024
+                    </span>
+                  </div>
+                  <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    The Science Behind Sustainable Fat Loss: What the Research Actually Says
+                  </h2>
+                  <p className="font-body text-muted-foreground mb-6 leading-relaxed">
+                    Forget the fads and quick fixes. We dive deep into the peer-reviewed research to explain 
+                    exactly how sustainable fat loss works—and why most diets fail long-term. Understanding 
+                    the science puts you in control of your results.
+                  </p>
+                  <Button className="w-fit">
+                    Read Article
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </div>
+            </Card>
           </motion.div>
 
-          {/* Reusable grid — drop new articles into journalArticles */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 md:gap-y-20">
-            {journalArticles.map((article, i) => (
-              <JournalCard key={article.slug} article={article} index={i} />
+          {/* Blog Post Grid - 3 columns */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                image: blogBreakfast,
+                category: "Meal Planning",
+                date: "February 28, 2024",
+                title: "10 High-Protein Breakfast Ideas That Actually Keep You Full Until Lunch",
+                excerpt: "Starting your day with adequate protein isn't just good for muscle—it regulates appetite hormones, stabilises blood sugar, and sets you up for better food choices all day long."
+              },
+              {
+                image: blogNutrition,
+                category: "Sports Nutrition",
+                date: "February 14, 2024",
+                title: "Fuelling Your Workouts: A Practical Guide to Pre and Post-Exercise Nutrition",
+                excerpt: "Timing your nutrition around exercise isn't just for elite athletes. Learn the evidence-based principles behind workout fuelling and how to apply them to your training routine."
+              },
+              {
+                image: blogWellness,
+                category: "Wellness",
+                date: "January 30, 2024",
+                title: "Why Sleep Is the Most Underrated Tool for Weight Management",
+                excerpt: "Poor sleep doesn't just leave you tired—it disrupts hunger hormones, increases cravings for high-calorie foods, and can sabotage even the best nutrition plan."
+              }
+            ].map((post, index) => (
+              <motion.div
+                key={post.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+              >
+                <Card className="overflow-hidden hover-lift h-full flex flex-col group">
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
+                        {post.category}
+                      </span>
+                      <span className="text-xs text-muted-foreground">{post.date}</span>
+                    </div>
+                    <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                      {post.title}
+                    </h3>
+                    <p className="font-body text-sm text-muted-foreground flex-1 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                    <Button variant="link" className="p-0 mt-4 w-fit text-accent">
+                      Read More
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ───────── Notify Me ───────── */}
-      <section className="py-20 md:py-32 bg-secondary">
-        <div className="container mx-auto px-4">
+          {/* Newsletter CTA */}
           <motion.div
-            className="max-w-2xl mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
+            className="mt-16 bg-primary rounded-2xl p-8 md:p-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
           >
-            <span className="font-body text-[0.7rem] tracking-[0.3em] uppercase text-primary mb-6 block">
-              Be the First to Read
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground mb-6 leading-tight">
-              Receive each new essay, quietly delivered.
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+              Get Weekly Evidence-Based Health Tips
             </h2>
-            <p className="font-body text-base text-muted-foreground mb-10 leading-relaxed">
-              No noise. No filler. Just considered writing on nutrition,
-              performance and longevity — sent only when there's something
-              worth saying.
+            <p className="font-body text-primary-foreground/80 mb-6 max-w-xl mx-auto">
+              Subscribe to our newsletter for the latest nutrition research, practical recipes, 
+              and exclusive content delivered to your inbox every week. No spam, just science.
             </p>
-
             <form
               onSubmit={handleSubscribe}
-              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+              className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto"
               noValidate
             >
               <input
@@ -151,21 +211,16 @@ const Blog = () => {
                 maxLength={255}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
+                placeholder="Enter your email"
                 aria-label="Email address"
-                className="flex-1 px-5 py-3 rounded-sm bg-background border border-border text-foreground placeholder:text-muted-foreground/60 font-body text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition"
+                className="flex-1 px-4 py-3 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-foreground/30"
               />
-              <Button
-                type="submit"
-                size="lg"
-                disabled={submitting}
-                className="rounded-sm tracking-[0.15em] uppercase text-xs"
-              >
-                {submitting ? "Sending..." : "Notify Me"}
+              <Button type="submit" variant="secondary" size="lg" disabled={submitting}>
+                {submitting ? "Sending..." : "Subscribe"}
               </Button>
             </form>
-            <p className="font-body text-xs text-muted-foreground/70 mt-5">
-              Unsubscribe anytime. We'll never share your email.
+            <p className="text-primary-foreground/60 text-xs mt-4">
+              By subscribing, you agree to receive email updates from SomaLab. Unsubscribe anytime.
             </p>
           </motion.div>
         </div>
