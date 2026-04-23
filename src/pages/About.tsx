@@ -36,13 +36,13 @@ const values = [
 const credentials = [
   {
     icon: Award,
-    title: "Qualified Nutrition Consultant",
-    description: "Diploma of Nutrition from an accredited Australian institution"
+    title: "Clinical Nutrition & Health Specialist",
+    description: "Evidence-based nutrition expertise grounded in scientific training and real-world healthcare experience, with a strong focus on practical, sustainable outcomes."
   },
   {
     icon: BookOpen,
     title: "Medical Laboratory Scientist",
-    description: "Bachelor of Medical Laboratory Science with clinical experience"
+    description: "Bachelor-qualified laboratory scientist with extensive clinical and diagnostic experience, bringing a deep understanding of human physiology, pathology, and data-driven health insights."
   },
   {
     icon: Shield,
@@ -52,7 +52,7 @@ const credentials = [
   {
     icon: Heart,
     title: "Continuing Education",
-    description: "Ongoing professional development in sports nutrition and metabolic health"
+    description: "Regular check-ins, responsive communication, and genuine care to keep you motivated and on track."
   }
 ];
 
@@ -168,7 +168,7 @@ const About = () => {
                 </div>
                 <div className="flex items-center gap-2 text-foreground">
                   <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="text-sm font-medium">500+ Clients Helped</span>
+                  <span className="text-sm font-medium">{"\n"}</span>
                 </div>
               </div>
             </motion.div>
