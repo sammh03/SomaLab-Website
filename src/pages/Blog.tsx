@@ -1,12 +1,54 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { toast } from "@/hooks/use-toast";
 import blogNutrition from "@/assets/blog-nutrition.jpg";
 import blogWellness from "@/assets/blog-wellness.jpg";
 import blogBreakfast from "@/assets/blog-breakfast.jpg";
 
+const newsletterSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, { message: "Please enter your email address." })
+    .email({ message: "Please enter a valid email address." })
+    .max(255, { message: "Email must be less than 255 characters." }),
+});
+
 const Blog = () => {
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = newsletterSchema.safeParse({ email });
+    if (!result.success) {
+      toast({
+        title: "Invalid email",
+        description: result.error.issues[0]?.message ?? "Please check your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setSubmitting(true);
+    const subject = encodeURIComponent("Newsletter Subscription Request");
+    const body = encodeURIComponent(
+      `Please subscribe the following email address to the SomaLab newsletter:\n\n${result.data.email}`
+    );
+    window.location.href = `mailto:hello@somalab.com.au?subject=${subject}&body=${body}`;
+
+    toast({
+      title: "Almost there!",
+      description: "Your email app will open to confirm your subscription request.",
+    });
+    setEmail("");
+    setSubmitting(false);
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -158,16 +200,25 @@ const Blog = () => {
               Subscribe to our newsletter for the latest nutrition research, practical recipes, 
               and exclusive content delivered to your inbox every week. No spam, just science.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto"
+              noValidate
+            >
               <input
                 type="email"
+                required
+                maxLength={255}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
+                aria-label="Email address"
                 className="flex-1 px-4 py-3 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-foreground/30"
               />
-              <Button variant="secondary" size="lg">
-                Subscribe
+              <Button type="submit" variant="secondary" size="lg" disabled={submitting}>
+                {submitting ? "Sending..." : "Subscribe"}
               </Button>
-            </div>
+            </form>
             <p className="text-primary-foreground/60 text-xs mt-4">
               By subscribing, you agree to receive email updates from SomaLab. Unsubscribe anytime.
             </p>
