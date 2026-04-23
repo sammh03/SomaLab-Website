@@ -28,7 +28,7 @@ $coach_image = get_theme_mod( 'coach_image', get_template_directory_uri() . '/as
 				With Science, Not Fads
 			</h1>
 
-			<p><?php echo esc_html( get_theme_mod( 'hero_text', 'SomaLab helps health-conscious Australians achieve sustainable fat loss, peak performance, and total wellbeing through personalised, evidence-based nutrition coaching. No restrictive diets. No quick fixes. Just real results.' ) ); ?></p>
+			<p><?php echo wp_kses_post( get_theme_mod( 'hero_text', "SomaLab helps health-conscious Australians achieve sustainable fat loss, peak performance, and total wellbeing through personalised, evidence-based nutrition coaching.\n\nNo restrictive diets. No quick fixes.&nbsp; &nbsp; &nbsp;\n\nJust real results!" ) ); ?></p>
 
 			<div class="hero-buttons">
 				<a href="<?php echo esc_url( $booking_url ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
@@ -153,7 +153,7 @@ $coach_image = get_theme_mod( 'coach_image', get_template_directory_uri() . '/as
 			<div class="about-text fade-right">
 				<span class="badge badge-primary">Meet Your Coach</span>
 				<h2 style="margin-top: 1rem;"><?php echo esc_html( get_theme_mod( 'coach_heading', 'Science Meets Compassion' ) ); ?></h2>
-				<p><?php echo esc_html( get_theme_mod( 'coach_bio_1', 'With a background in medical laboratory science and advanced qualifications in nutrition consulting, I founded SomaLab to bridge the gap between clinical evidence and practical, everyday wellness. I\'ve helped hundreds of Australians transform their relationship with food and achieve lasting results.' ) ); ?></p>
+				<p><?php echo wp_kses_post( get_theme_mod( 'coach_bio_1', "With a background in medical laboratory science and advanced qualifications in nutrition consulting, I founded SomaLab to bridge the gap between clinical evidence and practical, everyday wellness.&nbsp;" ) ); ?></p>
 				<p><?php echo esc_html( get_theme_mod( 'coach_bio_2', 'Whether you\'re looking to optimise body composition, boost your energy, improve athletic performance, or simply feel your best, I\'m here to guide you with evidence-based strategies tailored to your unique needs.' ) ); ?></p>
 				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="btn btn-primary">
 					Learn More About Me

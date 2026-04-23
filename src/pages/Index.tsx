@@ -71,10 +71,12 @@ const Index = () => {
               <br />
               With Science, Not Fads
             </h1>
-            <p className="font-body text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="font-body text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed whitespace-pre-line">
               SomaLab helps health-conscious Australians achieve sustainable fat loss, 
               peak performance, and total wellbeing through personalised, evidence-based 
-              nutrition coaching. No restrictive diets. No quick fixes. Just real results.
+              nutrition coaching.{"\n\n"}
+              No restrictive diets. No quick fixes.&nbsp; &nbsp; &nbsp;{"\n\n"}
+              Just real results!
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-base">
@@ -238,8 +240,7 @@ const Index = () => {
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                 With a background in medical laboratory science and advanced qualifications 
                 in nutrition consulting, I founded SomaLab to bridge the gap between clinical 
-                evidence and practical, everyday wellness. I've helped hundreds of Australians 
-                transform their relationship with food and achieve lasting results.
+                evidence and practical, everyday wellness.&nbsp;
               </p>
               <p className="font-body text-muted-foreground mb-8 leading-relaxed">
                 Whether you're looking to optimise body composition, boost your energy, 

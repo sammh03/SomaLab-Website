@@ -34,7 +34,7 @@ $coach_image = get_theme_mod( 'coach_image', get_template_directory_uri() . '/as
 				<h2 style="margin-top: 1rem;">From Lab Coat to Life Coach</h2>
 				<p>My journey to founding SomaLab began in the medical laboratory, where I spent years analysing blood samples and observing firsthand how lifestyle factors impact health markers. I saw patterns—clients whose test results improved dramatically through nutrition changes, and others who struggled despite following generic diet advice.</p>
 				<p>This sparked a passion that led me to pursue advanced qualifications in nutrition consulting. I realised that what people needed wasn't another restrictive diet—they needed personalised, science-backed guidance that fit their real lives.</p>
-				<p>Today, SomaLab combines my clinical background with a deep commitment to helping health-conscious Australians achieve sustainable fat loss, improved performance, and genuine wellbeing. No quick fixes. No one-size-fits-all plans. Just evidence-based strategies that work.</p>
+				<p>Today, SomaLab combines my clinical background with a deep commitment to helping health-conscious Australians achieve sustainable fat loss, improved performance, and genuine wellbeing.&nbsp;</p>
 				<div class="check-list">
 					<span class="check-item">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
