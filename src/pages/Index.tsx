@@ -2,8 +2,21 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Leaf, Heart, Users, FlaskConical, Clock, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
+import { SITE_URL, personSchema } from "@/lib/seo-config";
 import heroImage from "@/assets/hero-image.jpg";
 import coachPortrait from "@/assets/coach-portrait.jpg";
+
+const homepageSchemas = [
+  personSchema,
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    ],
+  },
+];
 
 // (Google Reviews removed for now)
 
@@ -44,6 +57,13 @@ const fadeInUp = {
 const Index = () => {
   return (
     <div>
+      <SEO
+        title="SomaLab | Evidence-Based Nutrition Coaching Australia"
+        description="Personalised, science-backed nutrition coaching for sustainable fat loss, peak performance, and total wellbeing. Serving Brisbane, Gold Coast & Australia-wide. Book your free consultation."
+        canonicalPath="/"
+        noSuffix
+        schemas={homepageSchemas}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">

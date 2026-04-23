@@ -2,7 +2,21 @@ import { motion } from "framer-motion";
 import { Heart, Target, Users, Leaf, CheckCircle, ArrowRight, Award, BookOpen, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
+import { SITE_URL, personSchema } from "@/lib/seo-config";
 import coachImage from "@/assets/coach-portrait.jpg";
+
+const aboutSchemas = [
+  personSchema,
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "About", item: `${SITE_URL}/about` },
+    ],
+  },
+];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
