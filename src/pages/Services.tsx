@@ -1,136 +1,126 @@
 import { motion } from "framer-motion";
-import { Check, ArrowRight, Clock, Users, Target, Briefcase, Calendar } from "lucide-react";
+import { Check, X, ArrowRight, Clock, Calendar, Sparkles, Crown, Flame, ClipboardList, Pill, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
-const services = [
+const BOOKING_URL = "https://calendly.com";
+
+const consultations = [
   {
-    name: "Initial Nutrition Consultation",
-    price: "$150",
-    duration: "75 minutes",
-    description: "A comprehensive first session to understand your health history, goals, and create your personalised nutrition strategy.",
-    whoFor: "Anyone ready to take the first step toward better health—whether you're managing weight, boosting energy, or optimising performance.",
-    features: [
-      "Comprehensive health & lifestyle assessment",
-      "Dietary analysis & identification of gaps",
-      "Personalised nutrition recommendations",
-      "Goal setting & action planning",
-      "Written summary & resources"
-    ],
-    outcomes: "Leave with a clear understanding of your nutritional needs and practical first steps to start seeing results.",
-    popular: false,
+    name: "Initial Consultation",
+    duration: "60 minutes",
+    price: "$149",
+    description: "A deep dive into your health, lifestyle and goals — and a clear plan to move forward.",
+    icon: Calendar,
     cta: "Book Initial Consultation",
-    icon: Calendar
   },
   {
     name: "Follow-Up Consultation",
-    price: "$95",
-    duration: "45 minutes",
-    description: "Regular check-ins to track your progress, address challenges, and refine your nutrition plan as you evolve.",
-    whoFor: "Existing clients who want ongoing support, accountability, and plan adjustments to stay on track.",
-    features: [
-      "Progress review & celebration of wins",
-      "Challenge troubleshooting",
-      "Plan adjustments & refinements",
-      "New strategies & meal ideas",
-      "Continued accountability support"
-    ],
-    outcomes: "Stay motivated, overcome plateaus, and continuously optimise your approach for lasting results.",
-    popular: false,
+    duration: "30 minutes",
+    price: "$79",
+    description: "Stay on track with focused check-ins, plan refinements and ongoing accountability.",
+    icon: Clock,
     cta: "Book Follow-Up",
-    icon: Clock
   },
-  {
-    name: "12-Week Health Optimisation",
-    price: "$997",
-    duration: "12 weeks",
-    description: "Our flagship program for sustainable transformation. Comprehensive support for those committed to lasting change.",
-    whoFor: "Health-conscious individuals ready for a complete transformation—ideal for sustainable fat loss, energy optimisation, or performance goals.",
-    features: [
-      "Initial comprehensive consultation (75 min)",
-      "6 x follow-up sessions over 12 weeks",
-      "Personalised meal planning guidance",
-      "Weekly check-ins via email/message",
-      "Recipe ideas & practical resources",
-      "Priority support between sessions",
-      "Final review & maintenance planning"
-    ],
-    outcomes: "Achieve sustainable results with the accountability, education, and support needed to maintain your transformation long-term.",
-    popular: true,
-    cta: "Start Your Transformation",
-    icon: Target
-  },
-  {
-    name: "Meal Planning & Accountability",
-    price: "$297/month",
-    duration: "Ongoing monthly",
-    description: "Structured weekly meal planning with regular accountability check-ins to keep you consistent and progressing.",
-    whoFor: "Busy professionals who need practical meal solutions and regular accountability to stay on track.",
-    features: [
-      "Weekly personalised meal plan guidance",
-      "Shopping lists & prep strategies",
-      "Fortnightly video check-ins (30 min)",
-      "Unlimited email/message support",
-      "Recipe suggestions based on preferences",
-      "Ongoing plan adjustments"
-    ],
-    outcomes: "Take the guesswork out of healthy eating with practical plans that fit your lifestyle and preferences.",
-    popular: false,
-    cta: "Get Started",
-    icon: Users
-  },
-  {
-    name: "Corporate Wellness Programs",
-    price: "Custom",
-    duration: "Flexible",
-    description: "Boost your team's health, productivity, and wellbeing with tailored workplace nutrition programs.",
-    whoFor: "Businesses and organisations looking to invest in employee health, reduce sick days, and improve workplace culture.",
-    features: [
-      "Group nutrition workshops & seminars",
-      "Individual employee consultations",
-      "Healthy workplace initiatives",
-      "Lunch & learn sessions",
-      "Custom program development",
-      "Ongoing support & resources"
-    ],
-    outcomes: "Healthier, more energised employees with improved focus, reduced absenteeism, and enhanced workplace wellbeing.",
-    popular: false,
-    cta: "Enquire Now",
-    icon: Briefcase
-  }
 ];
 
-const faqs = [
+const consultationIncludes = [
+  "Personalised advice",
+  "Goal setting",
+  "Clear next steps",
+];
+
+const programTiers = [
   {
-    q: "Do I need a referral to book a consultation?",
-    a: "No referral is needed. You can book directly through our online booking system. If you have a chronic condition or take medications, it's always good to let your doctor know you're working with a nutrition consultant."
+    name: "Essential",
+    price: "$1,200",
+    tagline: "Structured support to build momentum.",
+    icon: Sparkles,
+    popular: false,
+    features: [
+      "Fortnightly check-ins",
+      "Personalised nutrition plan",
+      "Habit coaching framework",
+      "Email support",
+    ],
+    cta: "Start with Essential",
   },
   {
-    q: "What happens after I book my consultation?",
-    a: "You'll receive a confirmation email with a pre-consultation questionnaire to complete before your session. This helps us make the most of our time together. You'll also receive joining details for your video or in-person appointment."
+    name: "Advanced",
+    price: "$1,800",
+    tagline: "Our most popular path — the complete coaching experience.",
+    icon: Crown,
+    popular: true,
+    features: [
+      "Weekly coaching calls",
+      "Fully personalised plan + adjustments",
+      "Habit & behaviour coaching",
+      "Unlimited messaging support",
+      "Supplement guidance",
+      "Progress tracking",
+    ],
+    cta: "Choose Advanced",
   },
   {
-    q: "Are your services covered by private health insurance?",
-    a: "Coverage depends on your individual policy and level of extras cover. We recommend checking with your health fund directly. We provide invoices with all necessary details for claiming."
+    name: "Elite",
+    price: "$2,800",
+    tagline: "High-touch, data-driven transformation.",
+    icon: Flame,
+    popular: false,
+    features: [
+      "Weekly 1:1 calls",
+      "Full lifestyle optimisation",
+      "Priority support",
+      "Data-driven guidance (bloodwork-informed)",
+      "High accountability coaching",
+    ],
+    cta: "Apply for Elite",
+  },
+];
+
+const addOns = [
+  { name: "Custom Meal Plan", price: "$99", icon: ClipboardList },
+  { name: "Supplement Protocol", price: "$79", icon: Pill },
+  { name: "Lifestyle Audit", price: "$149", icon: Activity },
+];
+
+const phases = [
+  {
+    label: "Phase 1",
+    title: "Foundation",
+    weeks: "Weeks 1–3",
+    description: "Establish the basics: nutrition principles, daily habits, sleep, and movement. We assess your starting point and build the routines that everything else stands on.",
   },
   {
-    q: "Can you help with specific health conditions?",
-    a: "We work with clients on a range of health goals including weight management, gut health, energy optimisation, sports nutrition, and general wellbeing. For complex medical conditions, we recommend working alongside your healthcare team."
+    label: "Phase 2",
+    title: "Optimisation",
+    weeks: "Weeks 4–8",
+    description: "Refine your plan based on real data and feedback. Dial in macros, energy, training, and recovery — and remove the friction that holds progress back.",
   },
   {
-    q: "What if I need to reschedule my appointment?",
-    a: "We understand life happens! Please give us at least 24 hours notice to reschedule. Same-day cancellations may incur a fee. You can easily reschedule through your booking confirmation email."
+    label: "Phase 3",
+    title: "Transformation",
+    weeks: "Weeks 9–12",
+    description: "Lock in lasting change. Push performance, consolidate results, and build a long-term blueprint you can run on your own — confidently and consistently.",
   },
-  {
-    q: "Do you offer online consultations?",
-    a: "Yes! We offer both in-person and video consultations to suit your preferences and schedule. Many clients prefer the convenience of online sessions—they're just as effective as face-to-face."
-  }
+];
+
+const forYou = [
+  "Busy professionals",
+  "People wanting sustainable fat loss",
+  "Individuals who value structure and accountability",
+];
+
+const notForYou = [
+  "People looking for quick fixes",
+  "Those unwilling to commit",
+  "Anyone expecting instant results",
 ];
 
 const Services = () => {
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -142,80 +132,71 @@ const Services = () => {
               Services & Pricing
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Personalised Nutrition Coaching
+              Coaching built around you
             </h1>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Evidence-based nutrition consulting tailored to your goals, lifestyle, and preferences. 
-              Choose the level of support that's right for you and start your journey to sustainable health.
+              From one-off consultations to our flagship 12-week transformation, choose the level of support
+              that matches where you are — and where you want to be.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Cards */}
+      {/* 1:1 Consultations */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-accent/10 text-accent rounded-full">
+              1:1 Consultations
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Focused, personalised sessions
+            </h2>
+            <p className="text-muted-foreground">
+              Every consultation includes personalised advice, clear goal setting and the next steps to act on.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {consultations.map((c, index) => (
               <motion.div
-                key={service.name}
+                key={c.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className={service.name === "12-Week Health Optimisation" ? "lg:col-span-1" : ""}
               >
-                <Card className={`h-full flex flex-col relative ${service.popular ? 'border-accent shadow-lg ring-2 ring-accent/20' : ''}`}>
-                  {service.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
-                  <CardHeader className="pt-8">
+                <Card className="h-full flex flex-col">
+                  <CardHeader>
                     <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                      <service.icon className="h-6 w-6 text-accent" />
+                      <c.icon className="h-6 w-6 text-accent" />
                     </div>
-                    <CardTitle className="font-heading text-xl">{service.name}</CardTitle>
-                    <CardDescription className="font-body">{service.description}</CardDescription>
+                    <CardTitle className="font-heading text-2xl">{c.name}</CardTitle>
+                    <CardDescription className="font-body">{c.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-1">
-                    <div className="mb-4">
-                      <span className="font-heading text-3xl font-bold text-foreground">{service.price}</span>
-                      {service.price !== "Custom" && <span className="text-muted-foreground ml-2">• {service.duration}</span>}
+                    <div className="mb-6 flex items-baseline gap-3">
+                      <span className="font-heading text-4xl font-bold text-foreground">{c.price}</span>
+                      <span className="text-muted-foreground">• {c.duration}</span>
                     </div>
-                    
-                    <div className="mb-4">
-                      <p className="text-sm font-medium text-foreground mb-1">Who it's for:</p>
-                      <p className="text-sm text-muted-foreground">{service.whoFor}</p>
-                    </div>
-
-                    <div className="mb-4">
-                      <p className="text-sm font-medium text-foreground mb-2">What's included:</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-2">
-                            <Check className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                            <span className="font-body text-sm text-muted-foreground">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="bg-secondary/50 p-3 rounded-lg">
-                      <p className="text-sm font-medium text-foreground mb-1">Expected outcomes:</p>
-                      <p className="text-sm text-muted-foreground">{service.outcomes}</p>
-                    </div>
+                    <ul className="space-y-2">
+                      {consultationIncludes.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-accent shrink-0 mt-1" />
+                          <span className="font-body text-sm text-muted-foreground">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                   <CardFooter>
-                    <Button
-                      asChild
-                      className="w-full"
-                      variant={service.popular ? "default" : "outline"}
-                    >
-                      <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-                        {service.cta}
+                    <Button asChild className="w-full" variant="outline">
+                      <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                        {c.cta}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
@@ -227,100 +208,239 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Booking Info Section */}
-      <section className="section-padding bg-secondary/50">
+      {/* 12-Week Transformation Program — Core Offer */}
+      <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4">
           <motion.div
-            className="max-w-3xl mx-auto text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
+            className="text-center max-w-3xl mx-auto mb-14"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-accent/10 text-accent rounded-full">
-              How to Book
+              Core Offer
             </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Getting Started Is Easy
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
+              The 12-Week Transformation Program
             </h2>
-            <p className="text-muted-foreground mb-8">
-              Ready to take the first step? Here's what to expect when you book with SomaLab.
+            <p className="text-muted-foreground text-lg">
+              A complete coaching system to rebuild your health, body and habits — in three structured phases.
+              Choose the level of support that's right for you.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                step: "1",
-                title: "Choose Your Service",
-                description: "Select the consultation type that best fits your needs and click to book."
-              },
-              {
-                step: "2",
-                title: "Complete Pre-Consultation Form",
-                description: "You'll receive a short questionnaire to help us prepare for your session."
-              },
-              {
-                step: "3",
-                title: "Attend Your Session",
-                description: "Join your video call or in-person appointment and start your transformation."
-              }
-            ].map((item, index) => (
+          <div className="grid md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+            {programTiers.map((tier, index) => (
               <motion.div
-                key={item.step}
-                className="text-center"
+                key={tier.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className={tier.popular ? "md:-mt-4 md:mb-4" : ""}
+              >
+                <Card
+                  className={`h-full flex flex-col relative ${
+                    tier.popular
+                      ? "border-accent shadow-xl ring-2 ring-accent/30 bg-card"
+                      : ""
+                  }`}
+                >
+                  {tier.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+                  <CardHeader className="pt-8">
+                    <div
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
+                        tier.popular ? "bg-accent text-accent-foreground" : "bg-accent/10 text-accent"
+                      }`}
+                    >
+                      <tier.icon className="h-6 w-6" />
+                    </div>
+                    <CardTitle className="font-heading text-2xl">{tier.name}</CardTitle>
+                    <CardDescription className="font-body">{tier.tagline}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <div className="mb-6">
+                      <span className="font-heading text-4xl font-bold text-foreground">{tier.price}</span>
+                      <span className="text-muted-foreground ml-2">• 12 weeks</span>
+                    </div>
+                    <ul className="space-y-3">
+                      {tier.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-accent shrink-0 mt-1" />
+                          <span className="font-body text-sm text-foreground/90">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter>
+                    <Button
+                      asChild
+                      className="w-full"
+                      variant={tier.popular ? "default" : "outline"}
+                      size="lg"
+                    >
+                      <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                        {tier.cta}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Program Phases */}
+      <section className="section-padding">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-accent/10 text-accent rounded-full">
+              Inside the 12 Weeks
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              A clear path, broken into three phases
+            </h2>
+            <p className="text-muted-foreground">
+              Every week builds on the last — so progress feels structured, not scattered.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {phases.map((phase, index) => (
+              <motion.div
+                key={phase.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-card border border-border rounded-2xl p-8 h-full"
+              >
+                <div className="text-sm font-medium text-accent mb-2">{phase.label} • {phase.weeks}</div>
+                <h3 className="font-heading text-2xl font-bold text-foreground mb-3">{phase.title}</h3>
+                <p className="font-body text-muted-foreground leading-relaxed">{phase.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Add-Ons */}
+      <section className="section-padding bg-secondary">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-accent/10 text-accent rounded-full">
+              Add-Ons
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Extras to deepen your results
+            </h2>
+            <p className="text-muted-foreground">Bolt these onto any consultation or program.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {addOns.map((addon, index) => (
+              <motion.div
+                key={addon.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="bg-card border border-border rounded-xl p-6 flex items-center gap-4"
               >
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent text-accent-foreground font-bold text-lg mb-4">
-                  {item.step}
-                </span>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+                  <addon.icon className="h-6 w-6 text-accent" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-heading text-lg font-semibold text-foreground">{addon.name}</h3>
+                </div>
+                <span className="font-heading text-xl font-bold text-foreground">{addon.price}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Who It's For / Not For */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
           <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
+            className="text-center max-w-2xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
+            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-accent/10 text-accent rounded-full">
+              Is This For You?
+            </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Frequently Asked Questions
+              Let's be honest about fit
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Got questions? We've got answers. If you don't see what you're looking for, 
-              feel free to get in touch.
+            <p className="text-muted-foreground">
+              Coaching only works when expectations are aligned. Here's who we work best with.
             </p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                className="bg-card p-6 rounded-xl border border-border"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{faq.q}</h3>
-                <p className="font-body text-muted-foreground">{faq.a}</p>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-card border border-accent/30 rounded-2xl p-8"
+            >
+              <h3 className="font-heading text-2xl font-bold text-foreground mb-6">This is for you if you're…</h3>
+              <ul className="space-y-4">
+                {forYou.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="h-3.5 w-3.5 text-accent" />
+                    </span>
+                    <span className="font-body text-foreground/90">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-card border border-border rounded-2xl p-8"
+            >
+              <h3 className="font-heading text-2xl font-bold text-foreground mb-6">This isn't for you if you're…</h3>
+              <ul className="space-y-4">
+                {notForYou.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-muted flex items-center justify-center shrink-0 mt-0.5">
+                      <X className="h-3.5 w-3.5 text-muted-foreground" />
+                    </span>
+                    <span className="font-body text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Booking / Discovery Call CTA */}
       <section className="section-padding bg-primary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -328,21 +448,20 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto"
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-              Not Sure Which Service Is Right for You?
+            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-accent/20 text-accent-foreground rounded-full">
+              Free Discovery Call
+            </span>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
+              Not sure where to start?
             </h2>
-            <p className="font-body text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-              Book a free 15-minute discovery call to discuss your goals and find the perfect fit for your needs. 
-              No pressure, no obligations—just friendly guidance.
+            <p className="font-body text-primary-foreground/80 text-lg mb-8">
+              Book a free 15–20 minute discovery call. We'll talk through your goals, answer your questions, and
+              help you decide if SomaLab is the right fit. No pressure, no obligations.
             </p>
-            <Button
-              asChild
-              size="lg"
-              variant="secondary"
-              className="text-base"
-            >
-              <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+            <Button asChild size="lg" variant="secondary" className="text-base">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 Book Your Free Discovery Call
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
