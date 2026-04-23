@@ -176,10 +176,10 @@ function somalab_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'contact_phone_display', array( 'label' => __( 'Phone (display)', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'text' ) );
 
 	// Social URLs
-	$wp_customize->add_setting( 'social_instagram', array( 'default' => 'https://instagram.com/somalab', 'sanitize_callback' => 'esc_url_raw' ) );
+	$wp_customize->add_setting( 'social_instagram', array( 'default' => 'https://instagram.com/somalab.au', 'sanitize_callback' => 'esc_url_raw' ) );
 	$wp_customize->add_control( 'social_instagram', array( 'label' => __( 'Instagram URL', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'url' ) );
 
-	$wp_customize->add_setting( 'social_facebook', array( 'default' => 'https://facebook.com/somalab', 'sanitize_callback' => 'esc_url_raw' ) );
+	$wp_customize->add_setting( 'social_facebook', array( 'default' => 'https://facebook.com/share/1KKJJyEUt', 'sanitize_callback' => 'esc_url_raw' ) );
 	$wp_customize->add_control( 'social_facebook', array( 'label' => __( 'Facebook URL', 'somalab' ), 'section' => 'somalab_footer', 'type' => 'url' ) );
 
 	// ABN
