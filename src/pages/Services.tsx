@@ -363,7 +363,7 @@ const Services = () => {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Button asChild size="lg">
                 <Link to={BOOKING_URL}>
-                  Book a Free Discovery Call
+                  Book Your Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -797,7 +797,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Discovery Call CTA */}
+      {/* Free Consultation CTA */}
       <section className="section-padding bg-primary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -808,18 +808,18 @@ const Services = () => {
             className="max-w-2xl mx-auto"
           >
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-accent/20 text-accent-foreground rounded-full">
-              Free Discovery Call
+              Free Consultation
             </span>
             <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
               Not sure which service is right for you?
             </h2>
             <p className="font-body text-primary-foreground/80 text-lg mb-8">
-              Book a free 15-minute discovery call to discuss your goals and find the perfect fit for your
+              Book your free 15-minute consultation to discuss your goals and find the perfect fit for your
               needs. No pressure, no obligations — just friendly guidance.
             </p>
             <Button asChild size="lg" variant="secondary" className="text-base">
               <Link to={BOOKING_URL}>
-                Book Your Free Discovery Call
+                Book Your Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
