@@ -26,7 +26,7 @@ const howItWorks = [
     step: "01",
     icon: Clock,
     title: "Book Your Free Consultation",
-    description: "Schedule a complimentary 30-minute discovery call to discuss your health goals and see if we're the right fit for you."
+    description: "Schedule your complimentary 30-minute consultation to discuss your health goals and see if we're the right fit for you."
   },
   {
     step: "02",
