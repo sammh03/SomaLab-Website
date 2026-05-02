@@ -397,7 +397,7 @@ const About = () => {
             </h2>
             <p className="text-primary-foreground/80 mb-8 text-lg">
               Join hundreds of Australians who have transformed their health with SomaLab. 
-              Book a free consultation today and take the first step toward sustainable wellbeing.
+              Book your free consultation today and take the first step toward sustainable wellbeing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -407,7 +407,7 @@ const About = () => {
                 className="font-medium"
               >
                 <Link to="/contact">
-                  Book Free Consultation
+                  Book Your Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

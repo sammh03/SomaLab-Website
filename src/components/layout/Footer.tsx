@@ -88,7 +88,7 @@ export const Footer = () => {
                 to="/contact"
                 className="inline-block font-body text-sm font-medium bg-accent text-accent-foreground px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors"
               >
-                Book a Consultation
+                Book Your Free Consultation
               </Link>
             </div>
           </div>
