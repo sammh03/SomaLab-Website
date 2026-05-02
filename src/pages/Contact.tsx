@@ -39,12 +39,13 @@ const CONTACT_EMAIL = "info@somalab.com.au";
 
 const interestOptions = [
   "Free Discovery Call",
-  "Initial Consultation",
-  "Follow-Up Consultation",
-  "12-Week Program — Essential",
-  "12-Week Program — Advanced",
-  "12-Week Program — Elite",
-  "Add-On / Other",
+  "Initial Consultation — $195",
+  "Follow-Up Consultation — $150",
+  "12-Week Health Optimisation — $997",
+  "Meal Planning & Accountability — $297/month",
+  "Corporate Wellness — Custom",
+  "Health Biomarker & Blood Analysis (Add-On) — $109",
+  "Other / Not sure yet",
 ];
 
 const contactSchema = z.object({
