@@ -115,7 +115,7 @@ export const Footer = () => {
                 Terms & Conditions
               </Link>
               <span className="hidden sm:inline">•</span>
-              <span>ABN: 00 000 000 000</span>
+              <span>ABN: 53 968 476 385</span>
             </div>
           </div>
         </div>
