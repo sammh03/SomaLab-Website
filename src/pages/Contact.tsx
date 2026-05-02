@@ -138,8 +138,8 @@ const Contact = () => {
   return (
     <div>
       <SEO
-        title="Contact SomaLab — Book Your Free Discovery Call"
-        description="Get in touch with SomaLab to book a free 15–20 minute discovery call. Personalised, evidence-based nutrition coaching across Brisbane, Gold Coast and Australia-wide."
+        title="Contact SomaLab — Book Your Free Consultation"
+        description="Get in touch with SomaLab to book a free 30-minute consultation. Personalised, evidence-based nutrition coaching across Brisbane, Gold Coast and Australia-wide."
         canonicalPath="/contact"
         schemas={contactSchemas}
       />
@@ -334,7 +334,7 @@ const Contact = () => {
                 <ol className="space-y-3 text-sm text-muted-foreground">
                   <li><span className="text-accent font-semibold mr-2">1.</span>We review your enquiry.</li>
                   <li><span className="text-accent font-semibold mr-2">2.</span>We reply within 1 business day with the next step.</li>
-                  <li><span className="text-accent font-semibold mr-2">3.</span>We book a free 15–20 min discovery call if it's a fit.</li>
+                  <li><span className="text-accent font-semibold mr-2">3.</span>We book a free 30 min consultation if it's a fit.</li>
                 </ol>
               </div>
             </motion.aside>
