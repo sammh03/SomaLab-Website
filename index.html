@@ -50,40 +50,8 @@
     <!-- Sitemap discovery -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
-    <!-- Site-wide structured data: LocalBusiness -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": ["ProfessionalService", "HealthAndBeautyBusiness"],
-        "@id": "https://somalab.com.au/#business",
-        "name": "SomaLab",
-        "legalName": "SomaLab Nutrition Consulting",
-        "description": "Evidence-based nutrition consulting and health coaching services in Australia. Serving Brisbane, Gold Coast, and Australia-wide.",
-        "url": "https://somalab.com.au",
-        "telephone": "+61414430113",
-        "email": "info@somalab.com.au",
-        "image": "https://somalab.com.au/og-image.jpg",
-        "priceRange": "$$",
-        "openingHours": "Mo-Fr 09:00-17:00",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "AU",
-          "addressRegion": "QLD"
-        },
-        "areaServed": [
-          { "@type": "Place", "name": "Brisbane" },
-          { "@type": "Place", "name": "Gold Coast" },
-          { "@type": "Place", "name": "Sunshine Coast" },
-          { "@type": "Place", "name": "Queensland" },
-          { "@type": "Place", "name": "Australia" }
-        ],
-        "sameAs": [
-          "https://instagram.com/somalab.au",
-          "https://facebook.com/somalab"
-        ],
-        "serviceType": ["Nutrition Consulting", "Health Coaching", "Weight Management", "Sports Nutrition", "Biomarker Analysis"]
-      }
-    </script>
+    <!-- Site-wide LocalBusiness JSON-LD is injected per-route by the SEO component (see src/lib/seo-config.ts) -->
+
   </head>
 
   <body>
