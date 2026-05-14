@@ -42,7 +42,7 @@ const Index = () => {
     <div>
       <SEO
         title="SomaLab | Evidence-Based Nutrition Coaching Australia"
-        description="Personalised, science-backed nutrition coaching for sustainable fat loss, peak performance, and total wellbeing. Serving Brisbane, Gold Coast & Australia-wide. Book your free consultation."
+        description="Personalised nutrition coaching for sustainable fat loss, peak performance, and wellbeing. Serving Brisbane, Gold Coast & Australia-wide."
         canonicalPath="/"
         noSuffix
         schemas={homepageSchemas}

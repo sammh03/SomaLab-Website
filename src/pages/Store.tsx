@@ -8,7 +8,7 @@ const Store = () => {
   return (
     <div>
       <SEO
-        title="SomaLab Store — Premium Health & Nutrition Products"
+        title="SomaLab Store"
         description="Curated health and nutrition products from SomaLab. Premium supplements and wellness essentials, launching soon."
         canonicalPath="/store"
       />
