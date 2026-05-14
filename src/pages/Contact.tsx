@@ -142,6 +142,7 @@ const Contact = () => {
         title="Contact SomaLab — Book Your Free Consultation"
         description="Get in touch with SomaLab to book a free 15-minute consultation. Personalised nutrition coaching across Brisbane, Gold Coast & Australia-wide."
         canonicalPath="/contact"
+        noSuffix
         schemas={contactSchemas}
       />
       {/* Hero */}
