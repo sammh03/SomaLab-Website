@@ -17,7 +17,7 @@ const NotFound = () => {
 
   return (
     <section className="section-padding bg-secondary min-h-[80vh] flex items-center">
-      <SEO title="Page Not Found" description="The page you're looking for doesn't exist." noIndex />
+      <SEO title="Page Not Found" description="The page you're looking for doesn't exist. Browse SomaLab services or return to the homepage." noIndex />
       <div className="container mx-auto px-4">
         <motion.div
           className="max-w-xl mx-auto text-center"
