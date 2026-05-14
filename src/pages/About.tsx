@@ -97,8 +97,8 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="About SomaLab"
-        description="Founded by a clinical nutrition consultant and medical laboratory scientist, SomaLab bridges science and sustainable wellness for Australians."
+        title="About SomaLab — Clinical Nutrition & Health Specialist"
+        description="Founded by a Bachelor-qualified medical laboratory scientist and clinical nutrition consultant, SomaLab bridges science and practical, sustainable wellness for Australians."
         canonicalPath="/about"
         schemas={aboutSchemas}
         ogType="profile"

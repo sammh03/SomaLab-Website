@@ -8,7 +8,7 @@ const Store = () => {
   return (
     <div>
       <SEO
-        title="SomaLab Store"
+        title="SomaLab Store — Premium Health & Nutrition Products"
         description="Curated health and nutrition products from SomaLab. Premium supplements and wellness essentials, launching soon."
         canonicalPath="/store"
       />
@@ -44,7 +44,7 @@ const Store = () => {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 tracking-tight"
             >
-              SomaLab Store — Coming Soon
+              Coming Soon
             </motion.h1>
 
             <motion.div

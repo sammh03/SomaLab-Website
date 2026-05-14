@@ -99,14 +99,14 @@ export const Footer = () => {
       <div className="border-t border-primary-foreground/20 py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <p className="font-body text-xs opacity-90 mb-4 leading-relaxed text-center">
+            <p className="font-body text-xs opacity-60 mb-4 leading-relaxed text-center">
               <strong>Disclaimer:</strong> The information provided by SomaLab is for general educational and
               informational purposes only. It is not intended as a substitute for professional medical advice,
               diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with
               any questions you may have regarding a medical condition. Nutrition consulting services provided by
               SomaLab are intended to complement, not replace, medical care. Individual results may vary.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs opacity-90">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs opacity-60">
               <Link to="/privacy" className="hover:opacity-100 transition-opacity">
                 Privacy Policy
               </Link>
@@ -124,7 +124,7 @@ export const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-primary-foreground/10 py-4">
         <div className="container mx-auto px-4">
-          <p className="font-body text-xs text-center opacity-80">
+          <p className="font-body text-xs text-center opacity-50">
             © {new Date().getFullYear()} SomaLab. All rights reserved.
           </p>
         </div>

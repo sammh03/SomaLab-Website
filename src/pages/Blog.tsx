@@ -62,7 +62,7 @@ const Blog = () => {
   return (
     <div>
       <SEO
-        title="Health & Nutrition Journal"
+        title="Health & Nutrition Journal — Evidence-Based Insights"
         description="The SomaLab Journal: science-backed articles on nutrition, fat loss, performance, and sustainable health for Australians."
         canonicalPath="/blog"
         schemas={blogSchemas}

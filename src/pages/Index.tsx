@@ -42,7 +42,7 @@ const Index = () => {
     <div>
       <SEO
         title="SomaLab | Evidence-Based Nutrition Coaching Australia"
-        description="Personalised nutrition coaching for sustainable fat loss, peak performance, and wellbeing. Serving Brisbane, Gold Coast & Australia-wide."
+        description="Personalised, science-backed nutrition coaching for sustainable fat loss, peak performance, and total wellbeing. Serving Brisbane, Gold Coast & Australia-wide. Book your free consultation."
         canonicalPath="/"
         noSuffix
         schemas={homepageSchemas}
@@ -54,8 +54,6 @@ const Index = () => {
             src={heroImage}
             alt="Fresh healthy whole foods and nutritious ingredients on a wooden surface"
             className="w-full h-full object-cover"
-            width={1920}
-            height={1280}
             fetchPriority="high"
             decoding="async"
           />
