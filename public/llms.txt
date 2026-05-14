@@ -1,0 +1,19 @@
+# SomaLab
+
+> Evidence-based nutrition consulting and health coaching for Australians — personalised plans for sustainable fat loss, performance, and wellbeing.
+
+SomaLab combines clinical laboratory science with nutrition consulting to deliver personalised, evidence-based coaching. Services include initial and follow-up consultations, a 12-week health optimisation program, meal planning, corporate wellness, and a health biomarker & blood analysis add-on. Based in Australia, serving Brisbane, Gold Coast, and clients Australia-wide.
+
+## Pages
+
+- [Home](/): Overview of SomaLab's evidence-based nutrition coaching and free consultation offer.
+- [About](/about): Founder background, philosophy, qualifications, and approach to client care.
+- [Services](/services): Full catalog with pricing — consultations, 12-week program, meal planning, corporate wellness, and biomarker analysis add-on.
+- [Store](/store): Curated nutrition products and resources (enquiry-based ordering).
+- [Blog](/blog): Articles on nutrition, performance, and sustainable wellbeing.
+- [Contact](/contact): Book a free 15-minute discovery call or send an enquiry.
+
+## Optional
+
+- [Privacy Policy](/privacy): How SomaLab handles personal information.
+- [Terms](/terms): Terms of service.
