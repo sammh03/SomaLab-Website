@@ -349,8 +349,8 @@ const Services = () => {
   return (
     <div>
       <SEO
-        title="Services & Pricing — Nutrition Coaching, 12-Week Program & Biomarker Analysis"
-        description="Personalised nutrition coaching: $195 initial consults, $150 follow-ups, $997 12-week transformation, $297/mo meal planning, corporate wellness & premium biomarker analysis."
+        title="Services & Pricing"
+        description="Personalised nutrition coaching: initial consults, follow-ups, 12-week programs, meal planning, corporate wellness & biomarker analysis."
         canonicalPath="/services"
         schemas={[...servicesSchemas, faqPageSchema]}
       />
