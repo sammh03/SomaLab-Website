@@ -189,10 +189,6 @@ const About = () => {
                   <CheckCircle className="h-5 w-5 text-accent" />
                   <span className="text-sm font-medium">Australian Qualified</span>
                 </div>
-                <div className="flex items-center gap-2 text-foreground">
-                  <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="text-sm font-medium">{"\n"}</span>
-                </div>
               </div>
             </motion.div>
           </div>
