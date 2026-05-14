@@ -98,8 +98,9 @@ const About = () => {
     <div className="min-h-screen">
       <SEO
         title="About SomaLab — Clinical Nutrition & Health Specialist"
-        description="Founded by a Bachelor-qualified medical laboratory scientist and clinical nutrition consultant, SomaLab bridges science and practical, sustainable wellness for Australians."
+        description="Founded by a medical laboratory scientist and clinical nutrition consultant, SomaLab bridges science and sustainable wellness for Australians."
         canonicalPath="/about"
+        noSuffix
         schemas={aboutSchemas}
         ogType="profile"
       />
