@@ -54,6 +54,8 @@ const Index = () => {
             src={heroImage}
             alt="Fresh healthy whole foods and nutritious ingredients on a wooden surface"
             className="w-full h-full object-cover"
+            width={1920}
+            height={1280}
             fetchPriority="high"
             decoding="async"
           />
