@@ -126,6 +126,18 @@ const servicesSchemas = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Do I need a referral to book a consultation?", acceptedAnswer: { "@type": "Answer", text: "No referral is needed. You can book directly. If you have a chronic condition or take medications, it's always good to let your doctor know you're working with a nutrition consultant." } },
+      { "@type": "Question", name: "What happens after I book?", acceptedAnswer: { "@type": "Answer", text: "You'll receive a confirmation email with a pre-consultation questionnaire to complete before your session. This helps us make the most of our time together. You'll also receive joining details for your video or in-person appointment." } },
+      { "@type": "Question", name: "Are your services covered by private health insurance?", acceptedAnswer: { "@type": "Answer", text: "Coverage depends on your individual policy and level of extras cover. We recommend checking with your health fund directly. We provide invoices with all necessary details for claiming." } },
+      { "@type": "Question", name: "Can you help with specific health conditions?", acceptedAnswer: { "@type": "Answer", text: "We work with clients on a range of health goals including weight management, gut health, energy optimisation, sports nutrition, and general wellbeing. For complex medical conditions, we recommend working alongside your healthcare team." } },
+      { "@type": "Question", name: "What if I need to reschedule my appointment?", acceptedAnswer: { "@type": "Answer", text: "Life happens! Please give at least 24 hours notice to reschedule. Same-day cancellations may incur a fee. You can easily reschedule through your booking confirmation email." } },
+      { "@type": "Question", name: "Do you offer online consultations?", acceptedAnswer: { "@type": "Answer", text: "Yes — we offer both in-person and video consultations to suit your preferences and schedule. Many clients prefer the convenience of online sessions; they're just as effective as face-to-face." } },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
@@ -336,9 +348,10 @@ const Services = () => {
   return (
     <div>
       <SEO
-        title="Services & Pricing — Nutrition Coaching, 12-Week Program & Biomarker Analysis"
-        description="Personalised nutrition coaching: $195 initial consults, $150 follow-ups, $997 12-week transformation, $297/mo meal planning, corporate wellness & premium biomarker analysis."
+        title="Nutrition Coaching Services & Pricing — SomaLab"
+        description="Personalised nutrition coaching: initial consults from $195, 12-week transformation $997, meal planning, corporate wellness & biomarker analysis."
         canonicalPath="/services"
+        noSuffix
         schemas={servicesSchemas}
       />
 
