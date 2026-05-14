@@ -26,26 +26,9 @@ const howItWorks = [
     step: "01",
     icon: Clock,
     title: "Book Your Free Consultation",
-    description: "Schedule your complimentary 30-minute consultation to discuss your health goals and see if we're the right fit for you."
+    description: "Schedule your complimentary 15-minute consultation to discuss your health goals and see if we're the right fit for you."
   },
-  {
-    step: "02",
-    icon: FlaskConical,
-    title: "Comprehensive Assessment",
-    description: "We analyse your lifestyle, dietary habits, health history, and goals to create a complete picture of your nutritional needs."
-  },
-  {
-    step: "03",
-    icon: Target,
-    title: "Personalised Plan Creation",
-    description: "Receive a tailored nutrition strategy designed specifically for your body, preferences, and lifestyle—no cookie-cutter approaches."
-  },
-  {
-    step: "04",
-    icon: Heart,
-    title: "Ongoing Support & Results",
-    description: "Regular check-ins, plan adjustments, and accountability coaching ensure you achieve sustainable, long-term transformation."
-  }
+// ... keep existing code
 ];
 
 const fadeInUp = {
@@ -296,7 +279,7 @@ const Index = () => {
             </h2>
             <p className="font-body text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               Take the first step towards sustainable health and wellbeing. Book your free 
-              30-minute consultation today and discover how personalised nutrition coaching 
+              15-minute consultation today and discover how personalised nutrition coaching 
               can help you achieve your goals.
             </p>
             <Button
