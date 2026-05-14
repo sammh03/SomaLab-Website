@@ -332,6 +332,19 @@ const faqs = [
   },
 ];
 
+const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 const Services = () => {
   return (
     <div>
@@ -339,7 +352,7 @@ const Services = () => {
         title="Services & Pricing — Nutrition Coaching, 12-Week Program & Biomarker Analysis"
         description="Personalised nutrition coaching: $195 initial consults, $150 follow-ups, $997 12-week transformation, $297/mo meal planning, corporate wellness & premium biomarker analysis."
         canonicalPath="/services"
-        schemas={servicesSchemas}
+        schemas={[...servicesSchemas, faqPageSchema]}
       />
 
       {/* Hero */}
