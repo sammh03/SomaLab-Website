@@ -47,7 +47,7 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/store" className="relative">
+            <Link to="/store" className="relative" aria-label="Shopping Cart">
               <ShoppingCart className="h-5 w-5 text-foreground hover:text-accent transition-colors" />
               {totalItems > 0 && (
                 <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-medium">
