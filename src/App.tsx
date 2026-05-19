@@ -28,6 +28,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <ScrollToTop />
+            <MetaPixelTracker />
             <Layout>
               <Routes>
                 <Route path="/" element={<Index />} />
