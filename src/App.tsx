@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/context/CartContext";
 import { Layout } from "@/components/layout/Layout";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { MetaPixelTracker } from "@/components/analytics/MetaPixelTracker";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -28,6 +29,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <ScrollToTop />
+            <MetaPixelTracker />
             <Layout>
               <Routes>
                 <Route path="/" element={<Index />} />
