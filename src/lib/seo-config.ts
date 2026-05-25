@@ -7,7 +7,7 @@
 
 export const SITE_URL = "https://somalab.com.au";
 export const SITE_NAME = "SomaLab";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+export const DEFAULT_OG_IMAGE = "https://ibb.co/Q7hMvCKm";
 
 /** Business NAP — keep consistent everywhere (footer, schema, contact page). */
 export const BUSINESS = {
