@@ -262,9 +262,10 @@ const Index = () => {
                 Science Meets Compassion
               </h2>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
-                With a background in medical laboratory science and advanced qualifications 
+                Hi, I'm Sam Hanna — founder of SomaLab and your dedicated nutrition coach.
+                {"\n"}With a background in medical laboratory science and advanced qualifications 
                 in nutrition consulting, I founded SomaLab to bridge the gap between clinical 
-                evidence and practical, everyday wellness.&nbsp;
+                evidence and practical, everyday wellness. 
               </p>
               <p className="font-body text-muted-foreground mb-8 leading-relaxed">
                 Whether you're looking to optimise body composition, boost your energy, 
