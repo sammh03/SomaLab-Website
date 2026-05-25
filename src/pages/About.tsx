@@ -143,7 +143,7 @@ const About = () => {
               <img
                 src={coachImage}
                 alt="SomaLab founder — Bachelor-qualified medical laboratory scientist and nutrition consultant"
-                className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover"
+                className="rounded-2xl shadow-xl w-3/4 aspect-[4/5] object-cover mx-auto"
                 loading="lazy"
                 decoding="async"
               />
