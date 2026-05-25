@@ -163,7 +163,7 @@ const About = () => {
                   From Lab Coat to Life Coach
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  My journey to founding SomaLab began in the medical laboratory, where I spent 
+                  My name is Sam Hanna, and my journey to founding SomaLab began in the medical laboratory, where I spent 
                   years analysing blood samples and observing firsthand how lifestyle factors 
                   impact health markers. I saw patterns—clients whose test results improved 
                   dramatically through nutrition changes, and others who struggled despite 
