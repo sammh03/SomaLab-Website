@@ -44,7 +44,7 @@ const interestOptions = [
   "12-Week Health Optimisation — $997",
   "Meal Planning & Accountability — $297/month",
   "Corporate Wellness — Custom",
-  "Health Biomarker & Blood Analysis (Add-On) — $109",
+  "Health Biomarker & Blood Analysis (Add-On) — $159",
   "Other / Not sure yet",
 ];
 

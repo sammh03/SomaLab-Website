@@ -122,7 +122,7 @@ const servicesSchemas = [
     description:
       "Premium add-on: data-driven biomarker review to personalise nutrition coaching using real biological insights.",
     provider: { "@id": `${SITE_URL}/#business` },
-    offers: { "@type": "Offer", price: "109", priceCurrency: "AUD", url: `${SITE_URL}/contact` },
+    offers: { "@type": "Offer", price: "159", priceCurrency: "AUD", url: `${SITE_URL}/contact` },
   },
   {
     "@context": "https://schema.org",
@@ -627,7 +627,7 @@ const Services = () => {
                     <div>
                       <div className="text-sm font-medium text-accent mb-1">Service Fee</div>
                       <div className="flex items-baseline gap-2">
-                        <span className="font-heading text-4xl font-bold text-foreground">$109</span>
+                        <span className="font-heading text-4xl font-bold text-foreground">$159</span>
                         <span className="text-muted-foreground text-sm">
                           + pathology testing costs
                         </span>
