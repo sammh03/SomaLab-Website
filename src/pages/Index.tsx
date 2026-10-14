@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Heart, Users, FlaskConical, Clock, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, Leaf, Heart, Users, FlaskConical, Clock, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { SITE_URL, personSchema } from "@/lib/seo-config";
@@ -65,113 +65,53 @@ const Index = () => {
         schemas={homepageSchemas}
       />
       {/* Hero Section */}
-      <section className="bg-soma-white pt-28 md:pt-36 pb-16 md:pb-24">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <p className="font-body text-xs md:text-[13px] uppercase tracking-[0.2em] text-soma-muted mb-6">
-              Evidence-Based Nutrition Coaching
-            </p>
-            <h1 className="font-heading font-normal text-soma-ink text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] mb-6">
-              Science, made
-              <br />
-              <em className="italic text-soma-green">personal.</em>
-            </h1>
-            <p className="font-body text-base md:text-lg text-soma-muted max-w-md mx-auto mb-8 leading-relaxed">
-              Nutrition coaching built around how your body actually works. Based in Brisbane and online across
-              Australia.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-soma-green text-soma-white font-body font-medium text-sm md:text-base px-7 py-3.5 transition-opacity hover:opacity-90"
-            >
-              Book a free discovery call
-            </Link>
-          </motion.div>
-          <motion.div
-            className="mt-12 md:mt-16 max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <img
-              src={heroImage}
-              alt="Fresh healthy whole foods and nutritious ingredients"
-              className="w-full h-[300px] sm:h-[400px] md:h-[520px] object-cover rounded-[32px]"
-              fetchPriority="high"
-              decoding="async"
-            />
-          </motion.div>
+      <section className="relative min-h-[90vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroImage}
+            alt="Fresh healthy whole foods and nutritious ingredients on a wooden surface"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
         </div>
-      </section>
-
-      {/* What's in a name */}
-      <section className="bg-soma-sand py-20 md:py-[120px]">
-        <motion.div
-          className="container mx-auto px-4 max-w-[1040px] text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="font-body text-xs md:text-[13px] uppercase tracking-[0.2em] text-soma-muted">
-            What's in a name
-          </p>
-          <div className="font-heading text-soma-green text-[96px] sm:text-[140px] md:text-[200px] leading-none my-6 md:my-8">
-            σῶμα
-          </div>
-          <div className="grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center text-left max-w-[880px] mx-auto">
-            <div>
-              <h3 className="font-heading font-normal text-3xl md:text-4xl text-soma-ink mb-2">Soma</h3>
-              <p className="font-body text-xs uppercase tracking-[0.2em] text-soma-muted mb-4">Noun · Ancient Greek</p>
-              <p className="font-body text-soma-muted leading-relaxed">
-                The whole of you. To the ancient Greeks, soma was never a number on a scale or a list of symptoms.
-                It was the living body: how you eat, move, sleep, recover and feel, all connected.
-              </p>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            className="max-w-2xl"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-accent/10 text-accent rounded-full">
+              Evidence-Based Nutrition Consulting
+            </span>
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+              Achieve Lasting
+              <span className="text-gradient"> Health</span>
+              <br />
+              With Science, Not Fads
+            </h1>
+            <p className="font-body text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed whitespace-pre-line">
+              SomaLab helps health-conscious Australians achieve sustainable fat loss, 
+              peak performance, and total wellbeing through personalised, evidence-based 
+              nutrition coaching.{"\n\n"}
+              No restrictive diets. No quick fixes.&nbsp; &nbsp; &nbsp;{"\n\n"}
+              Just real results!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" className="text-base">
+                <Link to="/contact">
+                  Book Your Free Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-base">
+                <Link to="/services">View Our Services</Link>
+              </Button>
             </div>
-            <div className="text-soma-orange text-3xl font-light text-center">+</div>
-            <div>
-              <h3 className="font-heading font-normal text-3xl md:text-4xl text-soma-ink mb-2">Lab</h3>
-              <p className="font-body text-xs uppercase tracking-[0.2em] text-soma-muted mb-4">
-                Noun · Where answers are found
-              </p>
-              <p className="font-body text-soma-muted leading-relaxed">
-                A place of curiosity, not judgement. You measure honestly, look closely at what's really there, make
-                a change, and see what happens.
-              </p>
-            </div>
-          </div>
-          <p className="font-heading text-2xl md:text-[28px] leading-snug text-soma-ink max-w-[680px] mx-auto mt-14 md:mt-20">
-            Your body has been telling you things for years. SomaLab is where we finally listen, read the results
-            together, and turn them into changes that last.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Measure / Understand / Change */}
-      <section className="bg-soma-white py-20 md:py-28">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <p className="font-body text-xs md:text-[13px] uppercase tracking-[0.2em] text-soma-muted mb-12">
-            How we work together
-          </p>
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              { icon: Clock, title: "Measure", text: "Your history, routine and goals, plus bloodwork where it helps." },
-              { icon: FlaskConical, title: "Understand", text: "What your results actually mean, explained in plain language." },
-              { icon: TrendingUp, title: "Change", text: "A plan that fits your life, adjusted as you progress." },
-            ].map((c, i) => (
-              <motion.div
-                key={c.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-              >
-                <c.icon className="h-8 w-8 mx-auto text-soma-green mb-5" strokeWidth={1.25} />
-                <h3 className="font-heading font-normal text-2xl text-soma-ink mb-3">{c.title}</h3>
-                <p className="font-body text-sm text-soma-muted leading-relaxed max-w-[260px] mx-auto">{c.text}</p>
-              </motion.div>
-            ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

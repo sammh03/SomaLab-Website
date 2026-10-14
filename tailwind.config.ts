@@ -18,18 +18,6 @@ export default {
         body: ["var(--font-body)", "sans-serif"],
       },
       colors: {
-        soma: {
-          ink: "hsl(var(--soma-ink))",
-          green: "hsl(var(--soma-green))",
-          muted: "hsl(var(--soma-muted))",
-          orange: "hsl(var(--soma-orange))",
-          sand: "hsl(var(--soma-sand))",
-          line: "hsl(var(--soma-line))",
-          track: "hsl(var(--soma-track))",
-          range: "hsl(var(--soma-range))",
-          note: "hsl(var(--soma-note))",
-          white: "hsl(var(--soma-white))",
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

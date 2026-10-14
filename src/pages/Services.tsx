@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { BiomarkerReviewCard } from "@/components/BiomarkerReviewCard";
 import { Link } from "react-router-dom";
 import {
   Check,
@@ -559,7 +558,7 @@ const Services = () => {
             </p>
           </motion.div>
 
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_460px] gap-10 items-start">
+          <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -654,14 +653,6 @@ const Services = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <BiomarkerReviewCard />
             </motion.div>
           </div>
         </div>
