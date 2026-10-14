@@ -47,6 +47,17 @@
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
+
+    --soma-ink: 166 35% 20%;
+    --soma-green: 169 36% 35%;
+    --soma-muted: 165 15% 36%;
+    --soma-orange: 24 83% 43%;
+    --soma-sand: 40 33% 93%;
+    --soma-line: 40 26% 85%;
+    --soma-track: 40 30% 91%;
+    --soma-range: 162 27% 85%;
+    --soma-note: 37 30% 95%;
+    --soma-white: 0 0% 100%;
   }
 
   .dark {
