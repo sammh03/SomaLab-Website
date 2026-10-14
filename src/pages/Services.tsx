@@ -558,7 +558,7 @@ const Services = () => {
             </p>
           </motion.div>
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-14 items-start">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

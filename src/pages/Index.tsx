@@ -115,6 +115,142 @@ const Index = () => {
         </div>
       </section>
 
+      {/* What's in a Name Section */}
+      <section style={{ backgroundColor: "#F3EFE7", padding: "120px 0 128px" }}>
+        <div className="container mx-auto px-4" style={{ maxWidth: "1000px" }}>
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <span
+              className="font-body uppercase"
+              style={{ fontSize: "12px", letterSpacing: "0.24em", color: "#4E6A63" }}
+            >
+              What's in a name?
+            </span>
+            <div
+              className="font-heading"
+              style={{
+                fontSize: "clamp(110px, 20vw, 230px)",
+                lineHeight: 1.05,
+                color: "#4A8A7E",
+                marginBottom: "64px",
+              }}
+            >
+              σῶμα
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-8 md:gap-10"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.15 }}
+          >
+            <div className="text-left" style={{ maxWidth: "380px" }}>
+              <h3 className="font-heading" style={{ fontSize: "34px", color: "#21453E" }}>
+                Soma
+              </h3>
+              <p
+                className="font-body uppercase mt-1 mb-4"
+                style={{ fontSize: "11px", letterSpacing: "0.16em", color: "#4E6A63" }}
+              >
+                From the Ancient Greek · Body
+              </p>
+              <p className="font-body" style={{ fontSize: "15px", lineHeight: 1.75, color: "#3A5751" }}>
+                The human body in all its complexity and individuality. More than
+                numbers or measurements, it represents the remarkable connection
+                between how we function, feel, and live.
+              </p>
+            </div>
+
+            <span
+              className="font-heading flex items-center justify-center shrink-0"
+              style={{ fontSize: "26px", color: "#C85A12" }}
+              aria-hidden="true"
+            >
+              +
+            </span>
+
+            <div className="text-left" style={{ maxWidth: "380px" }}>
+              <h3 className="font-heading" style={{ fontSize: "34px", color: "#21453E" }}>
+                Lab
+              </h3>
+              <p
+                className="font-body uppercase mt-1 mb-4"
+                style={{ fontSize: "11px", letterSpacing: "0.16em", color: "#4E6A63" }}
+              >
+                Science · Discovery · Understanding
+              </p>
+              <p className="font-body" style={{ fontSize: "15px", lineHeight: 1.75, color: "#3A5751" }}>
+                A place of exploration, research, and evidence-based
+                understanding. Where curiosity meets science, and knowledge
+                becomes the foundation for meaningful change.
+              </p>
+            </div>
+          </motion.div>
+
+          <div
+            className="mx-auto"
+            style={{ width: "48px", height: "1px", backgroundColor: "#C9BFAD", margin: "88px auto 56px" }}
+          />
+
+          <motion.div
+            className="text-center mx-auto"
+            style={{ maxWidth: "660px" }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            <h2
+              className="font-heading"
+              style={{ fontSize: "clamp(32px, 5vw, 46px)", color: "#21453E" }}
+            >
+              More than a name.{" "}
+              <em style={{ color: "#C85A12" }}>A philosophy.</em>
+            </h2>
+            <p
+              className="font-heading mt-6"
+              style={{ fontSize: "clamp(18px, 3vw, 22px)", lineHeight: 1.6, color: "#2E4E47" }}
+            >
+              SomaLab was founded on a simple belief: the better we understand
+              our bodies, the better we can care for them.
+            </p>
+            <p
+              className="font-body mt-5"
+              style={{ fontSize: "16px", lineHeight: 1.8, color: "#4E6A63" }}
+            >
+              By bringing together nutrition, physiology, biochemistry, and
+              evidence-based insights, we bridge the gap between science and
+              everyday wellbeing.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center justify-center flex-wrap text-center"
+            style={{ marginTop: "72px", gap: "18px" }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.45 }}
+          >
+            <span style={{ width: "40px", height: "1px", backgroundColor: "#C85A12" }} aria-hidden="true" />
+            <span
+              className="font-body uppercase font-semibold"
+              style={{ fontSize: "13px", letterSpacing: "0.28em", color: "#39796D" }}
+            >
+              SomaLab · Backed by Science, Built for Results
+            </span>
+            <span style={{ width: "40px", height: "1px", backgroundColor: "#C85A12" }} aria-hidden="true" />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Why Choose SomaLab Section */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto px-4">
